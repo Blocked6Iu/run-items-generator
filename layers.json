@@ -1,0 +1,109 @@
+{
+  "layers": [
+    {
+      "layer": 1,
+      "layer_name": "Extract",
+      "layer_enabled": true,
+      "order": 1,
+      "dataset_scope": true,
+      "specific_datasets": [],
+      "pipelines": [
+        {
+          "pipeline_name": "ExtractFromSource",
+          "enabled_parameters": [],
+          "disabled_parameters": []
+        }
+      ]
+    },
+    {
+      "layer": 2,
+      "layer_name": "Load Data Lake",
+      "layer_enabled": true,
+      "order": 2,
+      "dataset_scope": true,
+      "specific_datasets": [],
+      "pipelines": [
+        {
+          "pipeline_name": "LoadToDataLake",
+          "enabled_parameters": [],
+          "disabled_parameters": []
+        }
+      ]
+    },
+    {
+      "layer": 3,
+      "layer_name": "Load Staging",
+      "layer_enabled": true,
+      "order": 3,
+      "dataset_scope": true,
+      "specific_datasets": [],
+      "pipelines": [
+        {
+          "pipeline_name": "LoadToStaging",
+          "enabled_parameters": [],
+          "disabled_parameters": []
+        }
+      ]
+    },
+    {
+      "layer": 4,
+      "layer_name": "Data Warehouse - Load Dimensions",
+      "layer_enabled": true,
+      "order": 4,
+      "dataset_scope": false,
+      "specific_datasets": [],
+      "pipelines": [
+        {
+          "pipeline_name": "LoadDimensions",
+          "enabled_parameters": ["DimensionStoredProcedure"],
+          "disabled_parameters": []
+        }
+      ]
+    },
+    {
+      "layer": 5,
+      "layer_name": "Data Warehouse - Load Facts",
+      "layer_enabled": true,
+      "order": 5,
+      "dataset_scope": false,
+      "specific_datasets": [],
+      "pipelines": [
+        {
+          "pipeline_name": "LoadFacts",
+          "enabled_parameters": ["FactStoredProcedure"],
+          "disabled_parameters": []
+        }
+      ]
+    },
+    {
+      "layer": 6,
+      "layer_name": "Data Warehouse - Load Reporting",
+      "layer_enabled": true,
+      "order": 6,
+      "dataset_scope": false,
+      "specific_datasets": [],
+      "pipelines": [
+        {
+          "pipeline_name": "LoadReporting",
+          "enabled_parameters": ["ReportingStoredProcedure"],
+          "disabled_parameters": []
+        }
+      ]
+    },
+    {
+      "layer": 7,
+      "layer_name": "Data Warehouse - Maintenance",
+      "layer_enabled": true,
+      "order": 7,
+      "dataset_scope": false,
+      "specific_datasets": [],
+      "pipelines": [
+        {
+          "pipeline_name": "Maintenance",
+          "enabled_parameters": ["MaintenanceStoredProcedure"],
+          "disabled_parameters": []
+        }
+      ]
+    }
+  ]
+}

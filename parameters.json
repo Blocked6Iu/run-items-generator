@@ -1,0 +1,30 @@
+{
+  "dataset_parameters": {
+    "institute_list": [
+      { "INSTITUTE_ID": 1, "KEY_VAULT_SECRET": "School1_ConnectionString" },
+      { "INSTITUTE_ID": 2, "KEY_VAULT_SECRET": "School2_ConnectionString" }
+    ]
+  },
+  "etl_parameters": {
+    "dimension": {
+      "layer": 4,
+      "sp_list": [
+        "dim.sp1",
+        "dim.sp2",
+        "dim.sp3",
+        "dim.sp4",
+        "dim.sp5",
+        "dim.sp6"
+      ]
+    },
+    "fact": { "layer": 5, "sp_list": ["fact.sp1", "fact.sp2"] },
+    "reporting": {
+      "layer": 6,
+      "sp_list": ["reporting.sp1", "reporting.sp2", "reporting.sp3"]
+    },
+    "maintenence": {
+      "layer": 7,
+      "sp_list": ["maintenence.sp1", "maintenence.sp2"]
+    }
+  }
+}

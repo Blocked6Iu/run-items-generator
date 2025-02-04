@@ -1,0 +1,65 @@
+[
+  {
+    "dataset_name": "TblPupilManagementPupils",
+    "enabled": true,
+    "data_group": "Pupils",
+    "delta_details": {
+      "delta_enabled": false,
+      "dtStart": "",
+      "dtEnd": ""
+    },
+    "source_details": {
+      "source_schema": "dbo",
+      "source_table": "TblPupilManagementPupils",
+      "source_query": "SELECT <<INSTITUTE_ID>> AS [INSTITUTE_ID], [TblPupilManagementPupilsID],[txtSchoolID],[txtSubmitDateTime],[txtSubmitBy],[intPersonID],[txtSchoolCode],[txtOfficialName],[txtForename],[txtSurname],[txtMiddleNames],[txtInitials],[txtPreName],[txtPreferredSurname],[txtFullName],[txtGender],[txtDOB],[txtForm],[intNCYear],[txtYearBlock],[txtLevel],[txtTutor],[txtType],[txtAcademicHouse],[txtBoardingHouse],[txtEmailAddress],[txtEntryType],[txtEnrolmentDate],[intEnrolmentSchoolYear],[intEnrolmentNCYear],[txtEnrolmentHouse],[txtEnrolmentAcademicHouse],[txtEnrolmentTerm],[txtEnrolmentForm],[txtEnquiryDate],[txtEnquiryType],[txtEnquiryReason],[txtAdmissionsDate],[txtAdmissionsStatus],[txtReferenceRequestedDate],[txtInterviewDate],[txtInterviewTime],[txtWithdrawnDate],[txtWithdrawnReason],[txtRejectedDate],[txtRejectedReason],[txtRegisteredDate],[txtLeavingReason],[txtLeavingDate],[intLeavingNCYear],[intLeavingSchoolYear],[txtLeavingTerm],[txtProspectusEnquiryDate],[txtProspectusSentDate],[intProspectusSent],[txtVisitDate],[txtCandidateNumber],[txtCandidateCode],[txtCandidateForenames],[txtCandidateSurname],[intIsCandidate],[intFamily],[txtSiblingsIDList],[intSystemStatus] FROM [dbo].[TblPupilManagementPupils];"
+    },
+    "target_details": {
+      "datalake_root1": "raw/TblPupilManagementPupils",
+      "datalake_root2": "cleansed/TblPupilManagementPupils",
+      "target_schema": "Staging",
+      "target_table": "TblPupilManagementPupils"
+    }
+  },
+  {
+    "dataset_name": "TblReportsManagementCycle",
+    "enabled": true,
+    "data_group": "Reports",
+    "delta_details": {
+      "delta_enabled": false,
+      "dtStart": "",
+      "dtEnd": ""
+    },
+    "source_details": {
+      "source_schema": "dbo",
+      "source_table": "TblReportsManagementCycle",
+      "source_query": "SELECT <<INSTITUTE_ID>> AS [INSTITUTE_ID], [TblReportsManagementCycleID],[intType],[txtReportName],[txtTrackingName],[txtShortName],[intPreviousCycle],[txtStartReports],[txtFinishReports],[txtPrintReports],[intReportYear],[intReportTerm],[intReportsProfile],[intPrintingProfile],[intActive],[blnPrimaryTeacherOnly],[intiSAMS],[intSP],[intPP],[blnDownload],[blnUpload],[txtSubmitBy],[txtSubmitDateTime] FROM [dbo].[TblReportsManagementCycle];"
+    },
+    "target_details": {
+      "datalake_root1": "raw/TblReportsManagementCycle",
+      "datalake_root2": "cleansed/TblReportsManagementCycle",
+      "target_schema": "Staging",
+      "target_table": "TblReportsManagementCycle"
+    }
+  },
+  {
+    "dataset_name": "TblReportsStore",
+    "enabled": true,
+    "data_group": "Reports",
+    "delta_details": {
+      "delta_enabled": true,
+      "dtStart": "'2020-01-01'",
+      "dtEnd": ""
+    },
+    "source_details": {
+      "source_schema": "dbo",
+      "source_table": "TblReportsStore",
+      "source_query": "SELECT <<INSTITUTE_ID>> AS [INSTITUTE_ID], [TblReportsStoreID],[intReportCycle],[intReportType],[txtID],[intID],[txtSubID],[intTemplate],[intProgress],[txtSchoolID],[intYear],[intVersion],[txtSubmitDateTime],[txtSubmitBy] FROM [dbo].[TblReportsStore] WHERE [txtSubmitDateTime] >= <<dtStart>> AND [txtSubmitDateTime] < <<dtEnd>>;"
+    },
+    "target_details": {
+      "datalake_root1": "raw/TblReportsStore",
+      "datalake_root2": "cleansed/TblReportsStore",
+      "target_schema": "Staging",
+      "target_table": "TblReportsStore"
+    }
+  }
+]
