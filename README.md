@@ -35,10 +35,21 @@ This script generates a **single metadata-driven configuration file** called `ru
 - Each dataset is tagged with a `data_group`, allowing ADF to filter and process specific subsets of data dynamically.
 - This enhances flexibility for batch processing or targeted data refreshes.
 
+### 7. Run Parameters for Controlled Execution and Recovery
+The `run_parameters` section within `parameters.json` allows **fine-grained control over execution**, making the framework highly **re-runnable and failure-resilient**. These parameters dictate how ADF executes the pipelines:
+
+- **`run_from_layer`** → Starts execution from a specific layer, skipping all preceding layers.
+- **`run_layer_only`** → Executes a **single specified layer** and nothing else.
+- **`run_from_first_failure`** → Identifies the first failed run item (based on `state_details`) and resumes execution from there.
+- **`run_failed_items_only`** → Retries only the run items marked as `failed`, allowing quick recovery without reprocessing everything.
+
+These options ensure **minimal reprocessing** and provide **flexibility for handling failures efficiently**, improving overall execution efficiency.
+
 ## How Azure Data Factory Uses `run_items.json`
 1. ADF reads `run_items.json` as **its only input**.
 2. It loops over the **layers** and runs datasets in parallel within each layer.
-3. Delta-enabled datasets are initially loaded with **developer-defined defaults** but transition to fully **automated incremental processing**.
-4. **ETL parameters are dynamically applied**, ensuring procedural logic runs only within its corresponding layer.
+3. **Run parameters determine execution behavior**, whether it starts from a failure point, executes a specific layer, or runs only failed items.
+4. Delta-enabled datasets are initially loaded with **developer-defined defaults** but transition to fully **automated incremental processing**.
+5. **ETL parameters are dynamically applied**, ensuring procedural logic runs only within its corresponding layer.
 
 This framework provides a **scalable, metadata-driven, and developer-friendly** approach for managing ADF data pipelines efficiently. 🚀
