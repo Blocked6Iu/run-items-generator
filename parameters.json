@@ -3,7 +3,8 @@
     "institute_list": [
       { "INSTITUTE_ID": 1, "KEY_VAULT_SECRET": "School1_ConnectionString" },
       { "INSTITUTE_ID": 2, "KEY_VAULT_SECRET": "School2_ConnectionString" }
-    ]
+    ],
+    "state_details": { "status": "" }
   },
   "etl_parameters": {
     "dimension": {
@@ -26,5 +27,11 @@
       "layer": 7,
       "sp_list": ["maintenence.sp1", "maintenence.sp2"]
     }
+  },
+  "run_parameters": {
+    "run_from_layer": 1,
+    "run_layer_only": null,
+    "run_from_first_failure": 0,
+    "run_failed_items_only": 0
   }
 }

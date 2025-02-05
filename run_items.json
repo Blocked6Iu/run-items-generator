@@ -1,4 +1,10 @@
 {
+    "run_parameters": {
+        "run_from_layer": 1,
+        "run_layer_only": null,
+        "run_from_first_failure": 0,
+        "run_failed_items_only": 0
+    },
     "layers": [
         {
             "layer": 1,
@@ -14,7 +20,10 @@
                     "data_group": "Pupils",
                     "dataset_parameters": {
                         "INSTITUTE_ID": 1,
-                        "KEY_VAULT_SECRET": "School1_ConnectionString"
+                        "KEY_VAULT_SECRET": "School1_ConnectionString",
+                        "state_details": {
+                            "status": ""
+                        }
                     },
                     "source_details": {
                         "source_schema": "dbo",
@@ -34,7 +43,10 @@
                     "data_group": "Pupils",
                     "dataset_parameters": {
                         "INSTITUTE_ID": 2,
-                        "KEY_VAULT_SECRET": "School2_ConnectionString"
+                        "KEY_VAULT_SECRET": "School2_ConnectionString",
+                        "state_details": {
+                            "status": ""
+                        }
                     },
                     "source_details": {
                         "source_schema": "dbo",
@@ -54,7 +66,10 @@
                     "data_group": "Reports",
                     "dataset_parameters": {
                         "INSTITUTE_ID": 1,
-                        "KEY_VAULT_SECRET": "School1_ConnectionString"
+                        "KEY_VAULT_SECRET": "School1_ConnectionString",
+                        "state_details": {
+                            "status": ""
+                        }
                     },
                     "source_details": {
                         "source_schema": "dbo",
@@ -74,7 +89,10 @@
                     "data_group": "Reports",
                     "dataset_parameters": {
                         "INSTITUTE_ID": 2,
-                        "KEY_VAULT_SECRET": "School2_ConnectionString"
+                        "KEY_VAULT_SECRET": "School2_ConnectionString",
+                        "state_details": {
+                            "status": ""
+                        }
                     },
                     "source_details": {
                         "source_schema": "dbo",
@@ -94,7 +112,10 @@
                     "data_group": "Reports",
                     "dataset_parameters": {
                         "INSTITUTE_ID": 1,
-                        "KEY_VAULT_SECRET": "School1_ConnectionString"
+                        "KEY_VAULT_SECRET": "School1_ConnectionString",
+                        "state_details": {
+                            "status": ""
+                        }
                     },
                     "source_details": {
                         "source_schema": "dbo",
@@ -119,7 +140,10 @@
                     "data_group": "Reports",
                     "dataset_parameters": {
                         "INSTITUTE_ID": 2,
-                        "KEY_VAULT_SECRET": "School2_ConnectionString"
+                        "KEY_VAULT_SECRET": "School2_ConnectionString",
+                        "state_details": {
+                            "status": ""
+                        }
                     },
                     "source_details": {
                         "source_schema": "dbo",
@@ -161,7 +185,10 @@
                     "data_group": "Pupils",
                     "dataset_parameters": {
                         "INSTITUTE_ID": 1,
-                        "KEY_VAULT_SECRET": "School1_ConnectionString"
+                        "KEY_VAULT_SECRET": "School1_ConnectionString",
+                        "state_details": {
+                            "status": ""
+                        }
                     },
                     "source_details": {
                         "source_schema": "dbo",
@@ -181,7 +208,10 @@
                     "data_group": "Pupils",
                     "dataset_parameters": {
                         "INSTITUTE_ID": 2,
-                        "KEY_VAULT_SECRET": "School2_ConnectionString"
+                        "KEY_VAULT_SECRET": "School2_ConnectionString",
+                        "state_details": {
+                            "status": ""
+                        }
                     },
                     "source_details": {
                         "source_schema": "dbo",
@@ -201,7 +231,10 @@
                     "data_group": "Reports",
                     "dataset_parameters": {
                         "INSTITUTE_ID": 1,
-                        "KEY_VAULT_SECRET": "School1_ConnectionString"
+                        "KEY_VAULT_SECRET": "School1_ConnectionString",
+                        "state_details": {
+                            "status": ""
+                        }
                     },
                     "source_details": {
                         "source_schema": "dbo",
@@ -221,7 +254,10 @@
                     "data_group": "Reports",
                     "dataset_parameters": {
                         "INSTITUTE_ID": 2,
-                        "KEY_VAULT_SECRET": "School2_ConnectionString"
+                        "KEY_VAULT_SECRET": "School2_ConnectionString",
+                        "state_details": {
+                            "status": ""
+                        }
                     },
                     "source_details": {
                         "source_schema": "dbo",
@@ -241,7 +277,10 @@
                     "data_group": "Reports",
                     "dataset_parameters": {
                         "INSTITUTE_ID": 1,
-                        "KEY_VAULT_SECRET": "School1_ConnectionString"
+                        "KEY_VAULT_SECRET": "School1_ConnectionString",
+                        "state_details": {
+                            "status": ""
+                        }
                     },
                     "source_details": {
                         "source_schema": "dbo",
@@ -266,7 +305,10 @@
                     "data_group": "Reports",
                     "dataset_parameters": {
                         "INSTITUTE_ID": 2,
-                        "KEY_VAULT_SECRET": "School2_ConnectionString"
+                        "KEY_VAULT_SECRET": "School2_ConnectionString",
+                        "state_details": {
+                            "status": ""
+                        }
                     },
                     "source_details": {
                         "source_schema": "dbo",
@@ -308,7 +350,10 @@
                     "data_group": "Pupils",
                     "dataset_parameters": {
                         "INSTITUTE_ID": 1,
-                        "KEY_VAULT_SECRET": "School1_ConnectionString"
+                        "KEY_VAULT_SECRET": "School1_ConnectionString",
+                        "state_details": {
+                            "status": ""
+                        }
                     },
                     "source_details": {
                         "source_schema": "dbo",
@@ -328,7 +373,10 @@
                     "data_group": "Pupils",
                     "dataset_parameters": {
                         "INSTITUTE_ID": 2,
-                        "KEY_VAULT_SECRET": "School2_ConnectionString"
+                        "KEY_VAULT_SECRET": "School2_ConnectionString",
+                        "state_details": {
+                            "status": ""
+                        }
                     },
                     "source_details": {
                         "source_schema": "dbo",
@@ -348,7 +396,10 @@
                     "data_group": "Reports",
                     "dataset_parameters": {
                         "INSTITUTE_ID": 1,
-                        "KEY_VAULT_SECRET": "School1_ConnectionString"
+                        "KEY_VAULT_SECRET": "School1_ConnectionString",
+                        "state_details": {
+                            "status": ""
+                        }
                     },
                     "source_details": {
                         "source_schema": "dbo",
@@ -368,7 +419,10 @@
                     "data_group": "Reports",
                     "dataset_parameters": {
                         "INSTITUTE_ID": 2,
-                        "KEY_VAULT_SECRET": "School2_ConnectionString"
+                        "KEY_VAULT_SECRET": "School2_ConnectionString",
+                        "state_details": {
+                            "status": ""
+                        }
                     },
                     "source_details": {
                         "source_schema": "dbo",
@@ -388,7 +442,10 @@
                     "data_group": "Reports",
                     "dataset_parameters": {
                         "INSTITUTE_ID": 1,
-                        "KEY_VAULT_SECRET": "School1_ConnectionString"
+                        "KEY_VAULT_SECRET": "School1_ConnectionString",
+                        "state_details": {
+                            "status": ""
+                        }
                     },
                     "source_details": {
                         "source_schema": "dbo",
@@ -413,7 +470,10 @@
                     "data_group": "Reports",
                     "dataset_parameters": {
                         "INSTITUTE_ID": 2,
-                        "KEY_VAULT_SECRET": "School2_ConnectionString"
+                        "KEY_VAULT_SECRET": "School2_ConnectionString",
+                        "state_details": {
+                            "status": ""
+                        }
                     },
                     "source_details": {
                         "source_schema": "dbo",
@@ -453,12 +513,30 @@
                     "etl_category": "dimension",
                     "layer": 4,
                     "sp_list": [
-                        "dim.sp1",
-                        "dim.sp2",
-                        "dim.sp3",
-                        "dim.sp4",
-                        "dim.sp5",
-                        "dim.sp6"
+                        {
+                            "sp_name": "dim.sp1",
+                            "state": ""
+                        },
+                        {
+                            "sp_name": "dim.sp2",
+                            "state": ""
+                        },
+                        {
+                            "sp_name": "dim.sp3",
+                            "state": ""
+                        },
+                        {
+                            "sp_name": "dim.sp4",
+                            "state": ""
+                        },
+                        {
+                            "sp_name": "dim.sp5",
+                            "state": ""
+                        },
+                        {
+                            "sp_name": "dim.sp6",
+                            "state": ""
+                        }
                     ]
                 }
             ],
@@ -484,8 +562,14 @@
                     "etl_category": "fact",
                     "layer": 5,
                     "sp_list": [
-                        "fact.sp1",
-                        "fact.sp2"
+                        {
+                            "sp_name": "fact.sp1",
+                            "state": ""
+                        },
+                        {
+                            "sp_name": "fact.sp2",
+                            "state": ""
+                        }
                     ]
                 }
             ],
@@ -511,9 +595,18 @@
                     "etl_category": "reporting",
                     "layer": 6,
                     "sp_list": [
-                        "reporting.sp1",
-                        "reporting.sp2",
-                        "reporting.sp3"
+                        {
+                            "sp_name": "reporting.sp1",
+                            "state": ""
+                        },
+                        {
+                            "sp_name": "reporting.sp2",
+                            "state": ""
+                        },
+                        {
+                            "sp_name": "reporting.sp3",
+                            "state": ""
+                        }
                     ]
                 }
             ],
@@ -539,8 +632,14 @@
                     "etl_category": "maintenence",
                     "layer": 7,
                     "sp_list": [
-                        "maintenence.sp1",
-                        "maintenence.sp2"
+                        {
+                            "sp_name": "maintenence.sp1",
+                            "state": ""
+                        },
+                        {
+                            "sp_name": "maintenence.sp2",
+                            "state": ""
+                        }
                     ]
                 }
             ],

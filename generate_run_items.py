@@ -14,9 +14,10 @@ layers = load_json("layers.json")
 
 institute_list = parameters["dataset_parameters"]["institute_list"]
 etl_parameters = parameters["etl_parameters"]
+run_parameters = parameters.get("run_parameters", {})
 
 # Prepare output structure
-output = {"layers": []}
+output = {"run_parameters": run_parameters, "layers": []}
 
 # Process layers
 for layer in sorted(layers["layers"], key=lambda x: x["order"]):
@@ -49,7 +50,12 @@ for layer in sorted(layers["layers"], key=lambda x: x["order"]):
                         "dataset_name": dataset["dataset_name"],
                         "enabled": dataset["enabled"],
                         "data_group": dataset.get("data_group", ""),
-                        "dataset_parameters": institute,
+                        "dataset_parameters": {
+                            **institute,
+                            "state_details": parameters["dataset_parameters"].get(
+                                "state_details", {"status": ""}
+                            ),  # Default status is blank
+                        },
                         "source_details": {
                             **dataset["source_details"],
                             "source_query": source_query,
@@ -68,7 +74,10 @@ for layer in sorted(layers["layers"], key=lambda x: x["order"]):
                         {
                             "etl_category": param_category,
                             "layer": param_values["layer"],
-                            "sp_list": param_values["sp_list"],
+                            "sp_list": [
+                                {"sp_name": sp, "state": ""}
+                                for sp in param_values["sp_list"]
+                            ],
                         }
                     )
 
