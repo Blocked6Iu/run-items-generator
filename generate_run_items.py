@@ -19,6 +19,9 @@ run_parameters = parameters.get("run_parameters", {})
 # Prepare output structure
 output = {"run_parameters": run_parameters, "layers": []}
 
+# Initialize run_item_id counter
+run_item_id_counter = 1
+
 # Process layers
 for layer in sorted(layers["layers"], key=lambda x: x["order"]):
     if layer["layer_enabled"]:
@@ -47,6 +50,7 @@ for layer in sorted(layers["layers"], key=lambda x: x["order"]):
                             source_query = source_query.replace("<<dtEnd>>", dt_end)
 
                     run_item = {
+                        "run_item_id": run_item_id_counter,
                         "dataset_name": dataset["dataset_name"],
                         "enabled": dataset["enabled"],
                         "data_group": dataset.get("data_group", ""),
@@ -67,11 +71,13 @@ for layer in sorted(layers["layers"], key=lambda x: x["order"]):
 
                     run_item["target_details"] = dataset["target_details"]
                     run_item_detail.append(run_item)
+                    run_item_id_counter += 1
         else:  # Non-dataset-scoped layers (use only matching etl_parameters)
             for param_category, param_values in etl_parameters.items():
                 if param_values["layer"] == layer["layer"]:
                     run_item_detail.append(
                         {
+                            "run_item_id": run_item_id_counter,
                             "etl_category": param_category,
                             "layer": param_values["layer"],
                             "sp_list": [
@@ -80,6 +86,7 @@ for layer in sorted(layers["layers"], key=lambda x: x["order"]):
                             ],
                         }
                     )
+                    run_item_id_counter += 1
 
         layer_entry = {
             "layer": layer["layer"],
