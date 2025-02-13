@@ -1,39 +1,41 @@
 {
-  "dataset_parameters": {
-    "institute_list": [
-      { "INSTITUTE_ID": 1, "KEY_VAULT_SECRET": "School1_ConnectionString" },
-      { "INSTITUTE_ID": 2, "KEY_VAULT_SECRET": "School2_ConnectionString" }
-    ],
-    "state_details": { "status": "" }
-  },
-  "etl_parameters": {
-    "dimension": {
-      "layer": 4,
-      "sp_list": [
-        "dim.sp1",
-        "dim.sp2",
-        "dim.sp3",
-        "dim.sp4",
-        "dim.sp5",
-        "dim.sp6"
-      ]
+  "parameters": [
+    {
+      "parameter_name": "institute",
+      "parameter_values": [
+        { "INSTITUTE_ID": 1, "KEY_VAULT_SECRET": "School1_ConnectionString" },
+        { "INSTITUTE_ID": 2, "KEY_VAULT_SECRET": "School2_ConnectionString" }
+      ],
+      "layer_scope": [1, 2, 3]
     },
-    "fact": { "layer": 5, "sp_list": ["fact.sp1", "fact.sp2"] },
-    "reporting": {
-      "layer": 6,
-      "sp_list": ["reporting.sp1", "reporting.sp2", "reporting.sp3"]
+    {
+      "parameter_name": "LoadDimensionStoredProcedure",
+      "parameter_values": [{ "sp_name": "dim.sp1" }, { "sp_name": "dim.sp2" }],
+      "layer_scope": [4]
     },
-    "maintenence": {
-      "layer": 7,
-      "sp_list": ["maintenence.sp1", "maintenence.sp2"]
+    {
+      "parameter_name": "LoadFactStoredProcedure",
+      "parameter_values": [
+        { "sp_name": "fact.sp1" },
+        { "sp_name": "fact.sp2" }
+      ],
+      "layer_scope": [5]
+    },
+    {
+      "parameter_name": "LoadReportingStoredProcedure",
+      "parameter_values": [
+        { "sp_name": "reporting.sp1" },
+        { "sp_name": "reporting.sp2" }
+      ],
+      "layer_scope": [6]
+    },
+    {
+      "parameter_name": "LoadMaintenanceStoredProcedure",
+      "parameter_values": [
+        { "sp_name": "maintenance.sp1" },
+        { "sp_name": "maintenance.sp2" }
+      ],
+      "layer_scope": [7]
     }
-  },
-  "run_parameters": {
-    "run_from_layer": 1,
-    "run_layer_only": null,
-    "run_from_run_item_id": 1,
-    "run_run_item_id_only": null,
-    "run_from_first_failure": 0,
-    "run_failed_items_only": 0
-  }
+  ]
 }

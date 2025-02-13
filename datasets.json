@@ -1,8 +1,9 @@
 [
   {
     "dataset_name": "TblPupilManagementPupils",
-    "enabled": true,
+    "dataset_enabled": true,
     "data_group": "Pupils",
+    "layer_scope": [1, 2, 3],
     "delta_details": {
       "delta_enabled": false,
       "dtStart": "",
@@ -22,8 +23,9 @@
   },
   {
     "dataset_name": "TblReportsManagementCycle",
-    "enabled": true,
+    "dataset_enabled": true,
     "data_group": "Reports",
+    "layer_scope": [1, 2, 3],
     "delta_details": {
       "delta_enabled": false,
       "dtStart": "",
@@ -43,8 +45,9 @@
   },
   {
     "dataset_name": "TblReportsStore",
-    "enabled": true,
+    "dataset_enabled": true,
     "data_group": "Reports",
+    "layer_scope": [1, 2, 3],
     "delta_details": {
       "delta_enabled": true,
       "dtStart": "'2020-01-01'",
