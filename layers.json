@@ -92,9 +92,24 @@
     },
     {
       "layer": 7,
-      "layer_name": "Data Warehouse - Maintenance",
+      "layer_name": "Data Warehouse - Deletions",
       "layer_enabled": true,
       "order": 7,
+      "dataset_scope": false,
+      "specific_datasets": [],
+      "pipelines": [
+        {
+          "pipeline_name": "Deletions",
+          "enabled_parameters": ["DeletionStoredProcedure"],
+          "disabled_parameters": []
+        }
+      ]
+    },
+    {
+      "layer": 8,
+      "layer_name": "Data Warehouse - Maintenance",
+      "layer_enabled": true,
+      "order": 8,
       "dataset_scope": false,
       "specific_datasets": [],
       "pipelines": [

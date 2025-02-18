@@ -30,12 +30,20 @@
       "layer_scope": [6]
     },
     {
+      "parameter_name": "DeletionStoredProcedure",
+      "parameter_values": [
+        { "sp_name": "deletion.sp1" },
+        { "sp_name": "deletion.sp2" }
+      ],
+      "layer_scope": [7]
+    },
+    {
       "parameter_name": "LoadMaintenanceStoredProcedure",
       "parameter_values": [
         { "sp_name": "maintenance.sp1" },
         { "sp_name": "maintenance.sp2" }
       ],
-      "layer_scope": [7]
+      "layer_scope": [8]
     }
   ]
 }
