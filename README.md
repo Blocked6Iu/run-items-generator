@@ -8,12 +8,12 @@ This script generates a **single metadata-driven configuration file** called `ru
 
 - The script ingests structured metadata from three JSON files:
   - **`datasets.json`**: Defines datasets, their source/target details, delta processing rules, and logical grouping (`data_group`).
-  - **`parameters.json`**: Contains global dataset parameters (e.g., `institute_list`) and ETL parameters for non-dataset processes.
+  - **`parameters.json`**: Contains global dataset parameters (e.g., `customer`) and ETL parameters for non-dataset processes.
   - **`layers.json`**: Defines the pipeline execution layers and their dependencies.
 
 ### 2. Scalability and Parallel Execution
 
-- Each layer in `run_items.json` represents a logical execution stage in ADF.
+- Each layer in `run_items.json` represents a logical execution grouping in ADF.
 - ADF executes all **run items within a layer in parallel**, leveraging a `foreach` loop to maximize throughput.
 - The framework allows adding new datasets, layers, or parameters without modifying ADF logic, making it highly **scalable**.
 
@@ -41,16 +41,60 @@ This script generates a **single metadata-driven configuration file** called `ru
 - Each dataset is tagged with a `data_group`, allowing ADF to filter and process specific subsets of data dynamically.
 - This enhances flexibility for batch processing or targeted data refreshes.
 
-### 7. Run Parameters for Controlled Execution and Recovery
+## **7. Run Parameters for Controlled Execution and Recovery**
 
-The `run_parameters` section within `parameters.json` allows **fine-grained control over execution**, making the framework highly **re-runnable and failure-resilient**. These parameters dictate how ADF executes the pipelines:
+The **`01-Main` pipeline** supports **six parameters**, allowing fine-grained control over execution and recovery.
 
-- **`run_from_layer`** → Starts execution from a specific layer, skipping all preceding layers.
-- **`run_layer_only`** → Executes a **single specified layer** and nothing else.
-- **`run_from_first_failure`** → Identifies the first failed run item (based on `state_details`) and resumes execution from there.
-- **`run_failed_items_only`** → Retries only the run items marked as `failed`, allowing quick recovery without reprocessing everything.
+- **Four Integer Parameters** (`Int` type) control layer and run-item execution.
+- **Two Boolean Parameters** (`Bool` type) enable failure-based recovery.
 
-These options ensure **minimal reprocessing** and provide **flexibility for handling failures efficiently**, improving overall execution efficiency.
+### **Pipeline Parameters Overview**
+
+#### **🔢 Integer Parameters**
+
+| Parameter                  | Description                                                                 |
+| -------------------------- | --------------------------------------------------------------------------- |
+| **`run_from_layer`**       | Starts execution from a specific layer, skipping all preceding layers.      |
+| **`run_layer_only`**       | Executes only the specified layer, skipping all others.                     |
+| **`run_from_run_item_id`** | Starts execution from the specified `run_item_id`, skipping previous items. |
+| **`run_run_item_id_only`** | Executes only the specified `run_item_id` and no others.                    |
+
+#### **✅ Boolean Parameters**
+
+| Parameter                    | Description                                                                                         |
+| ---------------------------- | --------------------------------------------------------------------------------------------------- |
+| **`run_from_first_failure`** | Identifies the first failed `run_item` (based on `state_details`) and resumes execution from there. |
+| **`run_failed_items_only`**  | Retries only failed `run_items`, allowing quick recovery without reprocessing everything.           |
+
+### **🚀 Parameter Validation Rules**
+
+The pipeline **validates input parameters** using `02-Parameter-Check` to ensure consistency. Execution proceeds only if one of the following conditions is met:
+
+1️⃣ **Default Execution (Run All)**
+
+- All **integer parameters** = `0`
+- Both **boolean parameters** = `false`
+
+2️⃣ **Failure Recovery Mode**
+
+- All **integer parameters** = `0`
+- Only **one boolean parameter** = `true`
+
+3️⃣ **Targeted Execution Mode**
+
+- Only **one integer parameter** > `0`
+- All other **integer parameters** = `0`
+- Both **boolean parameters** = `false`
+
+❌ **Invalid Configurations**  
+Any other combination of parameters is **not allowed**, and the pipeline will **halt execution**.
+
+### **✨ Why Use These Parameters?**
+
+These controls ensure:  
+✅ **Minimal reprocessing** – Avoid re-executing unnecessary steps.  
+✅ **Efficient failure handling** – Quickly recover from failures without restarting everything.  
+✅ **Flexible execution** – Run specific layers or items as needed.
 
 ## How Azure Data Factory Uses `run_items.json`
 
@@ -60,27 +104,4 @@ These options ensure **minimal reprocessing** and provide **flexibility for hand
 4. Delta-enabled datasets are initially loaded with **developer-defined defaults** but transition to fully **automated incremental processing**.
 5. **ETL parameters are dynamically applied**, ensuring procedural logic runs only within its corresponding layer.
 
-## Pipeline Parameters
-
-The **01-Main** pipeline takes 6 parameters, 4 of which are type Int, 2 are type Bool.
-These 6 parameters are:
-**Integer Pipeline Parameters**
-run_from_layer
-run_layer_only
-run_from_run_item_id
-run_run_item_id_only
-
-**Boolean Pipeline Parameters**
-run_from_first_failure
-run_failed_items_only
-
-Validation checks are completed by the pipeline (by running the pipeline **02-Parameter-Check**) in order to ensure consistency.
-The pipeline will reject any invalid parameters that are input. Rules for valid parameters are:
-
-1. All integer parameters are 0 and both boolean parameters are false (default, run all)
-2. All integer parameters are 0 and only one of the boolean parameters are true
-3. Only one integer parameter is greater than 0, all other are 0, and both boolean parameters are false
-
-Any other configuration of the pipeline parameters is invalid and the pipeline will stop processing.
-
-This framework provides a **scalable, metadata-driven, and developer-friendly** approach for managing ADF data pipelines efficiently. 🚀
+This framework provides a `scalable, metadata-driven, and developer-friendly` approach for managing ADF data pipelines efficiently. 🚀
