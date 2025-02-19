@@ -12,10 +12,9 @@ def load_json(filename):
 datasets = load_json("datasets.json")
 parameters = load_json("parameters.json")
 layers = load_json("layers.json")
-run_settings = load_json("run_settings.json")
 
 # Prepare output structure
-output = {"run_settings": run_settings, "layers": []}
+output = {"layers": []}
 
 # Generate a sequential run_item_id
 run_item_id = 1
@@ -40,22 +39,14 @@ for layer in sorted(layers["layers"], key=lambda x: x["order"]):
         ]
 
         if applicable_datasets:  # Dataset-scoped layers
-            for dataset, institute in product(
+            for dataset, param_value in product(
                 applicable_datasets,
                 next(
-                    (
-                        p["parameter_values"]
-                        for p in applicable_parameters
-                        if p["parameter_name"] == "institute"
-                    ),
+                    (p["parameter_values"] for p in applicable_parameters),
                     [],
                 ),
             ):
-                source_query = dataset["source_details"]["source_query"]
-                source_query = source_query.replace(
-                    "<<INSTITUTE_ID>>", str(institute["INSTITUTE_ID"])
-                )
-
+                # source_query = dataset["source_details"]["source_query"]
                 delta_enabled = dataset.get("delta_details", {}).get(
                     "delta_enabled", False
                 )
@@ -65,26 +56,38 @@ for layer in sorted(layers["layers"], key=lambda x: x["order"]):
 
                     if dt_start:
                         dt_start = f"'{dt_start.strip("'")}'"
-                        source_query = source_query.replace("<<dtStart>>", dt_start)
+                        # source_query = source_query.replace("<<dtStart>>", dt_start)
                     if dt_end:
                         dt_end = f"'{dt_end.strip("'")}'"
-                        source_query = source_query.replace("<<dtEnd>>", dt_end)
+                        # source_query = source_query.replace("<<dtEnd>>", dt_end)
+
+                # Handle metadata dynamically
+                param_metadata = param_value.get("metadata", {})
 
                 run_item = {
                     "run_item_id": run_item_id,
+                    "run_item_enabled": True,
                     "parameter_details": {
                         "parameter_name": "institute",
-                        "parameter_values": [institute],
+                        "parameter_enabled": next(
+                            (
+                                p["parameter_enabled"]
+                                for p in applicable_parameters
+                                if p["parameter_name"] == "institute"
+                            ),
+                            False,
+                        ),
+                        "parameter_values": [
+                            {"value": param_value["value"], "metadata": param_metadata}
+                        ],
                     },
                     "dataset_details": {
                         "dataset_name": dataset["dataset_name"],
                         "dataset_enabled": dataset["dataset_enabled"],
-                        "data_group": dataset.get("data_group", None),
                         "source_details": {
                             **dataset["source_details"],
-                            "source_query": source_query,
+                            # "source_query": source_query,
                         },
-                        "target_details": dataset["target_details"],
                     },
                     "state_details": {
                         "state": "",
@@ -114,6 +117,7 @@ for layer in sorted(layers["layers"], key=lambda x: x["order"]):
                     run_item_detail.append(
                         {
                             "run_item_id": run_item_id,
+                            "run_item_enabled": True,
                             "parameter_details": {
                                 "parameter_name": param["parameter_name"],
                                 "parameter_values": [param_value],

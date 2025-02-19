@@ -1,12 +1,4 @@
 {
-    "run_settings": {
-        "run_from_layer": 1,
-        "run_layer_only": null,
-        "run_from_run_item_id": 1,
-        "run_run_item_id_only": null,
-        "run_from_first_failure": 0,
-        "run_failed_items_only": 0
-    },
     "layers": [
         {
             "layer": 1,
@@ -16,204 +8,192 @@
             "run_item_detail": [
                 {
                     "run_item_id": 1,
+                    "run_item_enabled": true,
                     "parameter_details": {
                         "parameter_name": "institute",
+                        "parameter_enabled": true,
                         "parameter_values": [
                             {
-                                "INSTITUTE_ID": 1,
-                                "KEY_VAULT_SECRET": "School1_ConnectionString"
+                                "value": 1,
+                                "metadata": {
+                                    "key_vault_secret": "School1_ConnectionString",
+                                    "placeholder_to_replace": "<<INSTITUTE_ID>>"
+                                }
                             }
                         ]
                     },
                     "dataset_details": {
                         "dataset_name": "TblPupilManagementPupils",
                         "dataset_enabled": true,
-                        "data_group": "Pupils",
                         "source_details": {
                             "source_schema": "dbo",
                             "source_table": "TblPupilManagementPupils",
-                            "source_query": "SELECT 1 AS [INSTITUTE_ID], [TblPupilManagementPupilsID],[txtSchoolID],[txtSubmitDateTime],[txtSubmitBy],[intPersonID],[txtSchoolCode],[txtOfficialName],[txtForename],[txtSurname],[txtMiddleNames],[txtInitials],[txtPreName],[txtPreferredSurname],[txtFullName],[txtGender],[txtDOB],[txtForm],[intNCYear],[txtYearBlock],[txtLevel],[txtTutor],[txtType],[txtAcademicHouse],[txtBoardingHouse],[txtEmailAddress],[txtEntryType],[txtEnrolmentDate],[intEnrolmentSchoolYear],[intEnrolmentNCYear],[txtEnrolmentHouse],[txtEnrolmentAcademicHouse],[txtEnrolmentTerm],[txtEnrolmentForm],[txtEnquiryDate],[txtEnquiryType],[txtEnquiryReason],[txtAdmissionsDate],[txtAdmissionsStatus],[txtReferenceRequestedDate],[txtInterviewDate],[txtInterviewTime],[txtWithdrawnDate],[txtWithdrawnReason],[txtRejectedDate],[txtRejectedReason],[txtRegisteredDate],[txtLeavingReason],[txtLeavingDate],[intLeavingNCYear],[intLeavingSchoolYear],[txtLeavingTerm],[txtProspectusEnquiryDate],[txtProspectusSentDate],[intProspectusSent],[txtVisitDate],[txtCandidateNumber],[txtCandidateCode],[txtCandidateForenames],[txtCandidateSurname],[intIsCandidate],[intFamily],[txtSiblingsIDList],[intSystemStatus] FROM [dbo].[TblPupilManagementPupils];"
-                        },
-                        "target_details": {
-                            "datalake_root1": "raw/TblPupilManagementPupils",
-                            "datalake_root2": "cleansed/TblPupilManagementPupils",
-                            "target_schema": "Staging",
-                            "target_table": "TblPupilManagementPupils"
+                            "source_query": "SELECT <<INSTITUTE_ID>> AS [INSTITUTE_ID], [TblPupilManagementPupilsID],[txtSchoolID],[txtSubmitDateTime],[txtSubmitBy],[intPersonID],[txtSchoolCode],[txtOfficialName],[txtForename],[txtSurname],[txtMiddleNames],[txtInitials],[txtPreName],[txtPreferredSurname],[txtFullName],[txtGender],[txtDOB],[txtForm],[intNCYear],[txtYearBlock],[txtLevel],[txtTutor],[txtType],[txtAcademicHouse],[txtBoardingHouse],[txtEmailAddress],[txtEntryType],[txtEnrolmentDate],[intEnrolmentSchoolYear],[intEnrolmentNCYear],[txtEnrolmentHouse],[txtEnrolmentAcademicHouse],[txtEnrolmentTerm],[txtEnrolmentForm],[txtEnquiryDate],[txtEnquiryType],[txtEnquiryReason],[txtAdmissionsDate],[txtAdmissionsStatus],[txtReferenceRequestedDate],[txtInterviewDate],[txtInterviewTime],[txtWithdrawnDate],[txtWithdrawnReason],[txtRejectedDate],[txtRejectedReason],[txtRegisteredDate],[txtLeavingReason],[txtLeavingDate],[intLeavingNCYear],[intLeavingSchoolYear],[txtLeavingTerm],[txtProspectusEnquiryDate],[txtProspectusSentDate],[intProspectusSent],[txtVisitDate],[txtCandidateNumber],[txtCandidateCode],[txtCandidateForenames],[txtCandidateSurname],[intIsCandidate],[intFamily],[txtSiblingsIDList],[intSystemStatus] FROM [dbo].[TblPupilManagementPupils];"
                         }
                     },
                     "state_details": {
                         "state": "",
-                        "state_updated": "2025-02-13T11:21:09.761883+00:00"
+                        "state_updated": "2025-02-19T17:03:27.509493+00:00"
                     }
                 },
                 {
                     "run_item_id": 2,
+                    "run_item_enabled": true,
                     "parameter_details": {
                         "parameter_name": "institute",
+                        "parameter_enabled": true,
                         "parameter_values": [
                             {
-                                "INSTITUTE_ID": 2,
-                                "KEY_VAULT_SECRET": "School2_ConnectionString"
+                                "value": 2,
+                                "metadata": {
+                                    "key_vault_secret": "School2_ConnectionString",
+                                    "placeholder_to_replace": "<<INSTITUTE_ID>>"
+                                }
                             }
                         ]
                     },
                     "dataset_details": {
                         "dataset_name": "TblPupilManagementPupils",
                         "dataset_enabled": true,
-                        "data_group": "Pupils",
                         "source_details": {
                             "source_schema": "dbo",
                             "source_table": "TblPupilManagementPupils",
-                            "source_query": "SELECT 2 AS [INSTITUTE_ID], [TblPupilManagementPupilsID],[txtSchoolID],[txtSubmitDateTime],[txtSubmitBy],[intPersonID],[txtSchoolCode],[txtOfficialName],[txtForename],[txtSurname],[txtMiddleNames],[txtInitials],[txtPreName],[txtPreferredSurname],[txtFullName],[txtGender],[txtDOB],[txtForm],[intNCYear],[txtYearBlock],[txtLevel],[txtTutor],[txtType],[txtAcademicHouse],[txtBoardingHouse],[txtEmailAddress],[txtEntryType],[txtEnrolmentDate],[intEnrolmentSchoolYear],[intEnrolmentNCYear],[txtEnrolmentHouse],[txtEnrolmentAcademicHouse],[txtEnrolmentTerm],[txtEnrolmentForm],[txtEnquiryDate],[txtEnquiryType],[txtEnquiryReason],[txtAdmissionsDate],[txtAdmissionsStatus],[txtReferenceRequestedDate],[txtInterviewDate],[txtInterviewTime],[txtWithdrawnDate],[txtWithdrawnReason],[txtRejectedDate],[txtRejectedReason],[txtRegisteredDate],[txtLeavingReason],[txtLeavingDate],[intLeavingNCYear],[intLeavingSchoolYear],[txtLeavingTerm],[txtProspectusEnquiryDate],[txtProspectusSentDate],[intProspectusSent],[txtVisitDate],[txtCandidateNumber],[txtCandidateCode],[txtCandidateForenames],[txtCandidateSurname],[intIsCandidate],[intFamily],[txtSiblingsIDList],[intSystemStatus] FROM [dbo].[TblPupilManagementPupils];"
-                        },
-                        "target_details": {
-                            "datalake_root1": "raw/TblPupilManagementPupils",
-                            "datalake_root2": "cleansed/TblPupilManagementPupils",
-                            "target_schema": "Staging",
-                            "target_table": "TblPupilManagementPupils"
+                            "source_query": "SELECT <<INSTITUTE_ID>> AS [INSTITUTE_ID], [TblPupilManagementPupilsID],[txtSchoolID],[txtSubmitDateTime],[txtSubmitBy],[intPersonID],[txtSchoolCode],[txtOfficialName],[txtForename],[txtSurname],[txtMiddleNames],[txtInitials],[txtPreName],[txtPreferredSurname],[txtFullName],[txtGender],[txtDOB],[txtForm],[intNCYear],[txtYearBlock],[txtLevel],[txtTutor],[txtType],[txtAcademicHouse],[txtBoardingHouse],[txtEmailAddress],[txtEntryType],[txtEnrolmentDate],[intEnrolmentSchoolYear],[intEnrolmentNCYear],[txtEnrolmentHouse],[txtEnrolmentAcademicHouse],[txtEnrolmentTerm],[txtEnrolmentForm],[txtEnquiryDate],[txtEnquiryType],[txtEnquiryReason],[txtAdmissionsDate],[txtAdmissionsStatus],[txtReferenceRequestedDate],[txtInterviewDate],[txtInterviewTime],[txtWithdrawnDate],[txtWithdrawnReason],[txtRejectedDate],[txtRejectedReason],[txtRegisteredDate],[txtLeavingReason],[txtLeavingDate],[intLeavingNCYear],[intLeavingSchoolYear],[txtLeavingTerm],[txtProspectusEnquiryDate],[txtProspectusSentDate],[intProspectusSent],[txtVisitDate],[txtCandidateNumber],[txtCandidateCode],[txtCandidateForenames],[txtCandidateSurname],[intIsCandidate],[intFamily],[txtSiblingsIDList],[intSystemStatus] FROM [dbo].[TblPupilManagementPupils];"
                         }
                     },
                     "state_details": {
                         "state": "",
-                        "state_updated": "2025-02-13T11:21:09.762881+00:00"
+                        "state_updated": "2025-02-19T17:03:27.509493+00:00"
                     }
                 },
                 {
                     "run_item_id": 3,
+                    "run_item_enabled": true,
                     "parameter_details": {
                         "parameter_name": "institute",
+                        "parameter_enabled": true,
                         "parameter_values": [
                             {
-                                "INSTITUTE_ID": 1,
-                                "KEY_VAULT_SECRET": "School1_ConnectionString"
+                                "value": 1,
+                                "metadata": {
+                                    "key_vault_secret": "School1_ConnectionString",
+                                    "placeholder_to_replace": "<<INSTITUTE_ID>>"
+                                }
                             }
                         ]
                     },
                     "dataset_details": {
                         "dataset_name": "TblReportsManagementCycle",
                         "dataset_enabled": true,
-                        "data_group": "Reports",
                         "source_details": {
                             "source_schema": "dbo",
                             "source_table": "TblReportsManagementCycle",
-                            "source_query": "SELECT 1 AS [INSTITUTE_ID], [TblReportsManagementCycleID],[intType],[txtReportName],[txtTrackingName],[txtShortName],[intPreviousCycle],[txtStartReports],[txtFinishReports],[txtPrintReports],[intReportYear],[intReportTerm],[intReportsProfile],[intPrintingProfile],[intActive],[blnPrimaryTeacherOnly],[intiSAMS],[intSP],[intPP],[blnDownload],[blnUpload],[txtSubmitBy],[txtSubmitDateTime] FROM [dbo].[TblReportsManagementCycle];"
-                        },
-                        "target_details": {
-                            "datalake_root1": "raw/TblReportsManagementCycle",
-                            "datalake_root2": "cleansed/TblReportsManagementCycle",
-                            "target_schema": "Staging",
-                            "target_table": "TblReportsManagementCycle"
+                            "source_query": "SELECT <<INSTITUTE_ID>> AS [INSTITUTE_ID], [TblReportsManagementCycleID],[intType],[txtReportName],[txtTrackingName],[txtShortName],[intPreviousCycle],[txtStartReports],[txtFinishReports],[txtPrintReports],[intReportYear],[intReportTerm],[intReportsProfile],[intPrintingProfile],[intActive],[blnPrimaryTeacherOnly],[intiSAMS],[intSP],[intPP],[blnDownload],[blnUpload],[txtSubmitBy],[txtSubmitDateTime] FROM [dbo].[TblReportsManagementCycle];"
                         }
                     },
                     "state_details": {
                         "state": "",
-                        "state_updated": "2025-02-13T11:21:09.762881+00:00"
+                        "state_updated": "2025-02-19T17:03:27.509493+00:00"
                     }
                 },
                 {
                     "run_item_id": 4,
+                    "run_item_enabled": true,
                     "parameter_details": {
                         "parameter_name": "institute",
+                        "parameter_enabled": true,
                         "parameter_values": [
                             {
-                                "INSTITUTE_ID": 2,
-                                "KEY_VAULT_SECRET": "School2_ConnectionString"
+                                "value": 2,
+                                "metadata": {
+                                    "key_vault_secret": "School2_ConnectionString",
+                                    "placeholder_to_replace": "<<INSTITUTE_ID>>"
+                                }
                             }
                         ]
                     },
                     "dataset_details": {
                         "dataset_name": "TblReportsManagementCycle",
                         "dataset_enabled": true,
-                        "data_group": "Reports",
                         "source_details": {
                             "source_schema": "dbo",
                             "source_table": "TblReportsManagementCycle",
-                            "source_query": "SELECT 2 AS [INSTITUTE_ID], [TblReportsManagementCycleID],[intType],[txtReportName],[txtTrackingName],[txtShortName],[intPreviousCycle],[txtStartReports],[txtFinishReports],[txtPrintReports],[intReportYear],[intReportTerm],[intReportsProfile],[intPrintingProfile],[intActive],[blnPrimaryTeacherOnly],[intiSAMS],[intSP],[intPP],[blnDownload],[blnUpload],[txtSubmitBy],[txtSubmitDateTime] FROM [dbo].[TblReportsManagementCycle];"
-                        },
-                        "target_details": {
-                            "datalake_root1": "raw/TblReportsManagementCycle",
-                            "datalake_root2": "cleansed/TblReportsManagementCycle",
-                            "target_schema": "Staging",
-                            "target_table": "TblReportsManagementCycle"
+                            "source_query": "SELECT <<INSTITUTE_ID>> AS [INSTITUTE_ID], [TblReportsManagementCycleID],[intType],[txtReportName],[txtTrackingName],[txtShortName],[intPreviousCycle],[txtStartReports],[txtFinishReports],[txtPrintReports],[intReportYear],[intReportTerm],[intReportsProfile],[intPrintingProfile],[intActive],[blnPrimaryTeacherOnly],[intiSAMS],[intSP],[intPP],[blnDownload],[blnUpload],[txtSubmitBy],[txtSubmitDateTime] FROM [dbo].[TblReportsManagementCycle];"
                         }
                     },
                     "state_details": {
                         "state": "",
-                        "state_updated": "2025-02-13T11:21:09.762881+00:00"
+                        "state_updated": "2025-02-19T17:03:27.509493+00:00"
                     }
                 },
                 {
                     "run_item_id": 5,
+                    "run_item_enabled": true,
                     "parameter_details": {
                         "parameter_name": "institute",
+                        "parameter_enabled": true,
                         "parameter_values": [
                             {
-                                "INSTITUTE_ID": 1,
-                                "KEY_VAULT_SECRET": "School1_ConnectionString"
+                                "value": 1,
+                                "metadata": {
+                                    "key_vault_secret": "School1_ConnectionString",
+                                    "placeholder_to_replace": "<<INSTITUTE_ID>>"
+                                }
                             }
                         ]
                     },
                     "dataset_details": {
                         "dataset_name": "TblReportsStore",
                         "dataset_enabled": true,
-                        "data_group": "Reports",
                         "source_details": {
                             "source_schema": "dbo",
                             "source_table": "TblReportsStore",
-                            "source_query": "SELECT 1 AS [INSTITUTE_ID], [TblReportsStoreID],[intReportCycle],[intReportType],[txtID],[intID],[txtSubID],[intTemplate],[intProgress],[txtSchoolID],[intYear],[intVersion],[txtSubmitDateTime],[txtSubmitBy] FROM [dbo].[TblReportsStore] WHERE [txtSubmitDateTime] >= '2020-01-01' AND [txtSubmitDateTime] < <<dtEnd>>;"
-                        },
-                        "target_details": {
-                            "datalake_root1": "raw/TblReportsStore",
-                            "datalake_root2": "cleansed/TblReportsStore",
-                            "target_schema": "Staging",
-                            "target_table": "TblReportsStore"
+                            "source_query": "SELECT <<INSTITUTE_ID>> AS [INSTITUTE_ID], [TblReportsStoreID],[intReportCycle],[intReportType],[txtID],[intID],[txtSubID],[intTemplate],[intProgress],[txtSchoolID],[intYear],[intVersion],[txtSubmitDateTime],[txtSubmitBy] FROM [dbo].[TblReportsStore] WHERE [txtSubmitDateTime] >= <<dtStart>> AND [txtSubmitDateTime] < <<dtEnd>>;"
                         },
                         "delta_details": {
                             "delta_enabled": true,
                             "dtStart": "'2020-01-01'",
-                            "dtEnd": ""
+                            "dtEnd": "'2025-01-01'"
                         }
                     },
                     "state_details": {
                         "state": "",
-                        "state_updated": "2025-02-13T11:21:09.762881+00:00"
+                        "state_updated": "2025-02-19T17:03:27.509493+00:00"
                     }
                 },
                 {
                     "run_item_id": 6,
+                    "run_item_enabled": true,
                     "parameter_details": {
                         "parameter_name": "institute",
+                        "parameter_enabled": true,
                         "parameter_values": [
                             {
-                                "INSTITUTE_ID": 2,
-                                "KEY_VAULT_SECRET": "School2_ConnectionString"
+                                "value": 2,
+                                "metadata": {
+                                    "key_vault_secret": "School2_ConnectionString",
+                                    "placeholder_to_replace": "<<INSTITUTE_ID>>"
+                                }
                             }
                         ]
                     },
                     "dataset_details": {
                         "dataset_name": "TblReportsStore",
                         "dataset_enabled": true,
-                        "data_group": "Reports",
                         "source_details": {
                             "source_schema": "dbo",
                             "source_table": "TblReportsStore",
-                            "source_query": "SELECT 2 AS [INSTITUTE_ID], [TblReportsStoreID],[intReportCycle],[intReportType],[txtID],[intID],[txtSubID],[intTemplate],[intProgress],[txtSchoolID],[intYear],[intVersion],[txtSubmitDateTime],[txtSubmitBy] FROM [dbo].[TblReportsStore] WHERE [txtSubmitDateTime] >= '2020-01-01' AND [txtSubmitDateTime] < <<dtEnd>>;"
-                        },
-                        "target_details": {
-                            "datalake_root1": "raw/TblReportsStore",
-                            "datalake_root2": "cleansed/TblReportsStore",
-                            "target_schema": "Staging",
-                            "target_table": "TblReportsStore"
+                            "source_query": "SELECT <<INSTITUTE_ID>> AS [INSTITUTE_ID], [TblReportsStoreID],[intReportCycle],[intReportType],[txtID],[intID],[txtSubID],[intTemplate],[intProgress],[txtSchoolID],[intYear],[intVersion],[txtSubmitDateTime],[txtSubmitBy] FROM [dbo].[TblReportsStore] WHERE [txtSubmitDateTime] >= <<dtStart>> AND [txtSubmitDateTime] < <<dtEnd>>;"
                         },
                         "delta_details": {
                             "delta_enabled": true,
                             "dtStart": "'2020-01-01'",
-                            "dtEnd": ""
+                            "dtEnd": "'2025-01-01'"
                         }
                     },
                     "state_details": {
                         "state": "",
-                        "state_updated": "2025-02-13T11:21:09.762881+00:00"
+                        "state_updated": "2025-02-19T17:03:27.509493+00:00"
                     }
                 }
             ],
@@ -233,204 +213,192 @@
             "run_item_detail": [
                 {
                     "run_item_id": 7,
+                    "run_item_enabled": true,
                     "parameter_details": {
                         "parameter_name": "institute",
+                        "parameter_enabled": true,
                         "parameter_values": [
                             {
-                                "INSTITUTE_ID": 1,
-                                "KEY_VAULT_SECRET": "School1_ConnectionString"
+                                "value": 1,
+                                "metadata": {
+                                    "key_vault_secret": "School1_ConnectionString",
+                                    "placeholder_to_replace": "<<INSTITUTE_ID>>"
+                                }
                             }
                         ]
                     },
                     "dataset_details": {
                         "dataset_name": "TblPupilManagementPupils",
                         "dataset_enabled": true,
-                        "data_group": "Pupils",
                         "source_details": {
                             "source_schema": "dbo",
                             "source_table": "TblPupilManagementPupils",
-                            "source_query": "SELECT 1 AS [INSTITUTE_ID], [TblPupilManagementPupilsID],[txtSchoolID],[txtSubmitDateTime],[txtSubmitBy],[intPersonID],[txtSchoolCode],[txtOfficialName],[txtForename],[txtSurname],[txtMiddleNames],[txtInitials],[txtPreName],[txtPreferredSurname],[txtFullName],[txtGender],[txtDOB],[txtForm],[intNCYear],[txtYearBlock],[txtLevel],[txtTutor],[txtType],[txtAcademicHouse],[txtBoardingHouse],[txtEmailAddress],[txtEntryType],[txtEnrolmentDate],[intEnrolmentSchoolYear],[intEnrolmentNCYear],[txtEnrolmentHouse],[txtEnrolmentAcademicHouse],[txtEnrolmentTerm],[txtEnrolmentForm],[txtEnquiryDate],[txtEnquiryType],[txtEnquiryReason],[txtAdmissionsDate],[txtAdmissionsStatus],[txtReferenceRequestedDate],[txtInterviewDate],[txtInterviewTime],[txtWithdrawnDate],[txtWithdrawnReason],[txtRejectedDate],[txtRejectedReason],[txtRegisteredDate],[txtLeavingReason],[txtLeavingDate],[intLeavingNCYear],[intLeavingSchoolYear],[txtLeavingTerm],[txtProspectusEnquiryDate],[txtProspectusSentDate],[intProspectusSent],[txtVisitDate],[txtCandidateNumber],[txtCandidateCode],[txtCandidateForenames],[txtCandidateSurname],[intIsCandidate],[intFamily],[txtSiblingsIDList],[intSystemStatus] FROM [dbo].[TblPupilManagementPupils];"
-                        },
-                        "target_details": {
-                            "datalake_root1": "raw/TblPupilManagementPupils",
-                            "datalake_root2": "cleansed/TblPupilManagementPupils",
-                            "target_schema": "Staging",
-                            "target_table": "TblPupilManagementPupils"
+                            "source_query": "SELECT <<INSTITUTE_ID>> AS [INSTITUTE_ID], [TblPupilManagementPupilsID],[txtSchoolID],[txtSubmitDateTime],[txtSubmitBy],[intPersonID],[txtSchoolCode],[txtOfficialName],[txtForename],[txtSurname],[txtMiddleNames],[txtInitials],[txtPreName],[txtPreferredSurname],[txtFullName],[txtGender],[txtDOB],[txtForm],[intNCYear],[txtYearBlock],[txtLevel],[txtTutor],[txtType],[txtAcademicHouse],[txtBoardingHouse],[txtEmailAddress],[txtEntryType],[txtEnrolmentDate],[intEnrolmentSchoolYear],[intEnrolmentNCYear],[txtEnrolmentHouse],[txtEnrolmentAcademicHouse],[txtEnrolmentTerm],[txtEnrolmentForm],[txtEnquiryDate],[txtEnquiryType],[txtEnquiryReason],[txtAdmissionsDate],[txtAdmissionsStatus],[txtReferenceRequestedDate],[txtInterviewDate],[txtInterviewTime],[txtWithdrawnDate],[txtWithdrawnReason],[txtRejectedDate],[txtRejectedReason],[txtRegisteredDate],[txtLeavingReason],[txtLeavingDate],[intLeavingNCYear],[intLeavingSchoolYear],[txtLeavingTerm],[txtProspectusEnquiryDate],[txtProspectusSentDate],[intProspectusSent],[txtVisitDate],[txtCandidateNumber],[txtCandidateCode],[txtCandidateForenames],[txtCandidateSurname],[intIsCandidate],[intFamily],[txtSiblingsIDList],[intSystemStatus] FROM [dbo].[TblPupilManagementPupils];"
                         }
                     },
                     "state_details": {
                         "state": "",
-                        "state_updated": "2025-02-13T11:21:09.762881+00:00"
+                        "state_updated": "2025-02-19T17:03:27.509493+00:00"
                     }
                 },
                 {
                     "run_item_id": 8,
+                    "run_item_enabled": true,
                     "parameter_details": {
                         "parameter_name": "institute",
+                        "parameter_enabled": true,
                         "parameter_values": [
                             {
-                                "INSTITUTE_ID": 2,
-                                "KEY_VAULT_SECRET": "School2_ConnectionString"
+                                "value": 2,
+                                "metadata": {
+                                    "key_vault_secret": "School2_ConnectionString",
+                                    "placeholder_to_replace": "<<INSTITUTE_ID>>"
+                                }
                             }
                         ]
                     },
                     "dataset_details": {
                         "dataset_name": "TblPupilManagementPupils",
                         "dataset_enabled": true,
-                        "data_group": "Pupils",
                         "source_details": {
                             "source_schema": "dbo",
                             "source_table": "TblPupilManagementPupils",
-                            "source_query": "SELECT 2 AS [INSTITUTE_ID], [TblPupilManagementPupilsID],[txtSchoolID],[txtSubmitDateTime],[txtSubmitBy],[intPersonID],[txtSchoolCode],[txtOfficialName],[txtForename],[txtSurname],[txtMiddleNames],[txtInitials],[txtPreName],[txtPreferredSurname],[txtFullName],[txtGender],[txtDOB],[txtForm],[intNCYear],[txtYearBlock],[txtLevel],[txtTutor],[txtType],[txtAcademicHouse],[txtBoardingHouse],[txtEmailAddress],[txtEntryType],[txtEnrolmentDate],[intEnrolmentSchoolYear],[intEnrolmentNCYear],[txtEnrolmentHouse],[txtEnrolmentAcademicHouse],[txtEnrolmentTerm],[txtEnrolmentForm],[txtEnquiryDate],[txtEnquiryType],[txtEnquiryReason],[txtAdmissionsDate],[txtAdmissionsStatus],[txtReferenceRequestedDate],[txtInterviewDate],[txtInterviewTime],[txtWithdrawnDate],[txtWithdrawnReason],[txtRejectedDate],[txtRejectedReason],[txtRegisteredDate],[txtLeavingReason],[txtLeavingDate],[intLeavingNCYear],[intLeavingSchoolYear],[txtLeavingTerm],[txtProspectusEnquiryDate],[txtProspectusSentDate],[intProspectusSent],[txtVisitDate],[txtCandidateNumber],[txtCandidateCode],[txtCandidateForenames],[txtCandidateSurname],[intIsCandidate],[intFamily],[txtSiblingsIDList],[intSystemStatus] FROM [dbo].[TblPupilManagementPupils];"
-                        },
-                        "target_details": {
-                            "datalake_root1": "raw/TblPupilManagementPupils",
-                            "datalake_root2": "cleansed/TblPupilManagementPupils",
-                            "target_schema": "Staging",
-                            "target_table": "TblPupilManagementPupils"
+                            "source_query": "SELECT <<INSTITUTE_ID>> AS [INSTITUTE_ID], [TblPupilManagementPupilsID],[txtSchoolID],[txtSubmitDateTime],[txtSubmitBy],[intPersonID],[txtSchoolCode],[txtOfficialName],[txtForename],[txtSurname],[txtMiddleNames],[txtInitials],[txtPreName],[txtPreferredSurname],[txtFullName],[txtGender],[txtDOB],[txtForm],[intNCYear],[txtYearBlock],[txtLevel],[txtTutor],[txtType],[txtAcademicHouse],[txtBoardingHouse],[txtEmailAddress],[txtEntryType],[txtEnrolmentDate],[intEnrolmentSchoolYear],[intEnrolmentNCYear],[txtEnrolmentHouse],[txtEnrolmentAcademicHouse],[txtEnrolmentTerm],[txtEnrolmentForm],[txtEnquiryDate],[txtEnquiryType],[txtEnquiryReason],[txtAdmissionsDate],[txtAdmissionsStatus],[txtReferenceRequestedDate],[txtInterviewDate],[txtInterviewTime],[txtWithdrawnDate],[txtWithdrawnReason],[txtRejectedDate],[txtRejectedReason],[txtRegisteredDate],[txtLeavingReason],[txtLeavingDate],[intLeavingNCYear],[intLeavingSchoolYear],[txtLeavingTerm],[txtProspectusEnquiryDate],[txtProspectusSentDate],[intProspectusSent],[txtVisitDate],[txtCandidateNumber],[txtCandidateCode],[txtCandidateForenames],[txtCandidateSurname],[intIsCandidate],[intFamily],[txtSiblingsIDList],[intSystemStatus] FROM [dbo].[TblPupilManagementPupils];"
                         }
                     },
                     "state_details": {
                         "state": "",
-                        "state_updated": "2025-02-13T11:21:09.762881+00:00"
+                        "state_updated": "2025-02-19T17:03:27.509493+00:00"
                     }
                 },
                 {
                     "run_item_id": 9,
+                    "run_item_enabled": true,
                     "parameter_details": {
                         "parameter_name": "institute",
+                        "parameter_enabled": true,
                         "parameter_values": [
                             {
-                                "INSTITUTE_ID": 1,
-                                "KEY_VAULT_SECRET": "School1_ConnectionString"
+                                "value": 1,
+                                "metadata": {
+                                    "key_vault_secret": "School1_ConnectionString",
+                                    "placeholder_to_replace": "<<INSTITUTE_ID>>"
+                                }
                             }
                         ]
                     },
                     "dataset_details": {
                         "dataset_name": "TblReportsManagementCycle",
                         "dataset_enabled": true,
-                        "data_group": "Reports",
                         "source_details": {
                             "source_schema": "dbo",
                             "source_table": "TblReportsManagementCycle",
-                            "source_query": "SELECT 1 AS [INSTITUTE_ID], [TblReportsManagementCycleID],[intType],[txtReportName],[txtTrackingName],[txtShortName],[intPreviousCycle],[txtStartReports],[txtFinishReports],[txtPrintReports],[intReportYear],[intReportTerm],[intReportsProfile],[intPrintingProfile],[intActive],[blnPrimaryTeacherOnly],[intiSAMS],[intSP],[intPP],[blnDownload],[blnUpload],[txtSubmitBy],[txtSubmitDateTime] FROM [dbo].[TblReportsManagementCycle];"
-                        },
-                        "target_details": {
-                            "datalake_root1": "raw/TblReportsManagementCycle",
-                            "datalake_root2": "cleansed/TblReportsManagementCycle",
-                            "target_schema": "Staging",
-                            "target_table": "TblReportsManagementCycle"
+                            "source_query": "SELECT <<INSTITUTE_ID>> AS [INSTITUTE_ID], [TblReportsManagementCycleID],[intType],[txtReportName],[txtTrackingName],[txtShortName],[intPreviousCycle],[txtStartReports],[txtFinishReports],[txtPrintReports],[intReportYear],[intReportTerm],[intReportsProfile],[intPrintingProfile],[intActive],[blnPrimaryTeacherOnly],[intiSAMS],[intSP],[intPP],[blnDownload],[blnUpload],[txtSubmitBy],[txtSubmitDateTime] FROM [dbo].[TblReportsManagementCycle];"
                         }
                     },
                     "state_details": {
                         "state": "",
-                        "state_updated": "2025-02-13T11:21:09.762881+00:00"
+                        "state_updated": "2025-02-19T17:03:27.509493+00:00"
                     }
                 },
                 {
                     "run_item_id": 10,
+                    "run_item_enabled": true,
                     "parameter_details": {
                         "parameter_name": "institute",
+                        "parameter_enabled": true,
                         "parameter_values": [
                             {
-                                "INSTITUTE_ID": 2,
-                                "KEY_VAULT_SECRET": "School2_ConnectionString"
+                                "value": 2,
+                                "metadata": {
+                                    "key_vault_secret": "School2_ConnectionString",
+                                    "placeholder_to_replace": "<<INSTITUTE_ID>>"
+                                }
                             }
                         ]
                     },
                     "dataset_details": {
                         "dataset_name": "TblReportsManagementCycle",
                         "dataset_enabled": true,
-                        "data_group": "Reports",
                         "source_details": {
                             "source_schema": "dbo",
                             "source_table": "TblReportsManagementCycle",
-                            "source_query": "SELECT 2 AS [INSTITUTE_ID], [TblReportsManagementCycleID],[intType],[txtReportName],[txtTrackingName],[txtShortName],[intPreviousCycle],[txtStartReports],[txtFinishReports],[txtPrintReports],[intReportYear],[intReportTerm],[intReportsProfile],[intPrintingProfile],[intActive],[blnPrimaryTeacherOnly],[intiSAMS],[intSP],[intPP],[blnDownload],[blnUpload],[txtSubmitBy],[txtSubmitDateTime] FROM [dbo].[TblReportsManagementCycle];"
-                        },
-                        "target_details": {
-                            "datalake_root1": "raw/TblReportsManagementCycle",
-                            "datalake_root2": "cleansed/TblReportsManagementCycle",
-                            "target_schema": "Staging",
-                            "target_table": "TblReportsManagementCycle"
+                            "source_query": "SELECT <<INSTITUTE_ID>> AS [INSTITUTE_ID], [TblReportsManagementCycleID],[intType],[txtReportName],[txtTrackingName],[txtShortName],[intPreviousCycle],[txtStartReports],[txtFinishReports],[txtPrintReports],[intReportYear],[intReportTerm],[intReportsProfile],[intPrintingProfile],[intActive],[blnPrimaryTeacherOnly],[intiSAMS],[intSP],[intPP],[blnDownload],[blnUpload],[txtSubmitBy],[txtSubmitDateTime] FROM [dbo].[TblReportsManagementCycle];"
                         }
                     },
                     "state_details": {
                         "state": "",
-                        "state_updated": "2025-02-13T11:21:09.762881+00:00"
+                        "state_updated": "2025-02-19T17:03:27.509493+00:00"
                     }
                 },
                 {
                     "run_item_id": 11,
+                    "run_item_enabled": true,
                     "parameter_details": {
                         "parameter_name": "institute",
+                        "parameter_enabled": true,
                         "parameter_values": [
                             {
-                                "INSTITUTE_ID": 1,
-                                "KEY_VAULT_SECRET": "School1_ConnectionString"
+                                "value": 1,
+                                "metadata": {
+                                    "key_vault_secret": "School1_ConnectionString",
+                                    "placeholder_to_replace": "<<INSTITUTE_ID>>"
+                                }
                             }
                         ]
                     },
                     "dataset_details": {
                         "dataset_name": "TblReportsStore",
                         "dataset_enabled": true,
-                        "data_group": "Reports",
                         "source_details": {
                             "source_schema": "dbo",
                             "source_table": "TblReportsStore",
-                            "source_query": "SELECT 1 AS [INSTITUTE_ID], [TblReportsStoreID],[intReportCycle],[intReportType],[txtID],[intID],[txtSubID],[intTemplate],[intProgress],[txtSchoolID],[intYear],[intVersion],[txtSubmitDateTime],[txtSubmitBy] FROM [dbo].[TblReportsStore] WHERE [txtSubmitDateTime] >= '2020-01-01' AND [txtSubmitDateTime] < <<dtEnd>>;"
-                        },
-                        "target_details": {
-                            "datalake_root1": "raw/TblReportsStore",
-                            "datalake_root2": "cleansed/TblReportsStore",
-                            "target_schema": "Staging",
-                            "target_table": "TblReportsStore"
+                            "source_query": "SELECT <<INSTITUTE_ID>> AS [INSTITUTE_ID], [TblReportsStoreID],[intReportCycle],[intReportType],[txtID],[intID],[txtSubID],[intTemplate],[intProgress],[txtSchoolID],[intYear],[intVersion],[txtSubmitDateTime],[txtSubmitBy] FROM [dbo].[TblReportsStore] WHERE [txtSubmitDateTime] >= <<dtStart>> AND [txtSubmitDateTime] < <<dtEnd>>;"
                         },
                         "delta_details": {
                             "delta_enabled": true,
                             "dtStart": "'2020-01-01'",
-                            "dtEnd": ""
+                            "dtEnd": "'2025-01-01'"
                         }
                     },
                     "state_details": {
                         "state": "",
-                        "state_updated": "2025-02-13T11:21:09.762881+00:00"
+                        "state_updated": "2025-02-19T17:03:27.509493+00:00"
                     }
                 },
                 {
                     "run_item_id": 12,
+                    "run_item_enabled": true,
                     "parameter_details": {
                         "parameter_name": "institute",
+                        "parameter_enabled": true,
                         "parameter_values": [
                             {
-                                "INSTITUTE_ID": 2,
-                                "KEY_VAULT_SECRET": "School2_ConnectionString"
+                                "value": 2,
+                                "metadata": {
+                                    "key_vault_secret": "School2_ConnectionString",
+                                    "placeholder_to_replace": "<<INSTITUTE_ID>>"
+                                }
                             }
                         ]
                     },
                     "dataset_details": {
                         "dataset_name": "TblReportsStore",
                         "dataset_enabled": true,
-                        "data_group": "Reports",
                         "source_details": {
                             "source_schema": "dbo",
                             "source_table": "TblReportsStore",
-                            "source_query": "SELECT 2 AS [INSTITUTE_ID], [TblReportsStoreID],[intReportCycle],[intReportType],[txtID],[intID],[txtSubID],[intTemplate],[intProgress],[txtSchoolID],[intYear],[intVersion],[txtSubmitDateTime],[txtSubmitBy] FROM [dbo].[TblReportsStore] WHERE [txtSubmitDateTime] >= '2020-01-01' AND [txtSubmitDateTime] < <<dtEnd>>;"
-                        },
-                        "target_details": {
-                            "datalake_root1": "raw/TblReportsStore",
-                            "datalake_root2": "cleansed/TblReportsStore",
-                            "target_schema": "Staging",
-                            "target_table": "TblReportsStore"
+                            "source_query": "SELECT <<INSTITUTE_ID>> AS [INSTITUTE_ID], [TblReportsStoreID],[intReportCycle],[intReportType],[txtID],[intID],[txtSubID],[intTemplate],[intProgress],[txtSchoolID],[intYear],[intVersion],[txtSubmitDateTime],[txtSubmitBy] FROM [dbo].[TblReportsStore] WHERE [txtSubmitDateTime] >= <<dtStart>> AND [txtSubmitDateTime] < <<dtEnd>>;"
                         },
                         "delta_details": {
                             "delta_enabled": true,
                             "dtStart": "'2020-01-01'",
-                            "dtEnd": ""
+                            "dtEnd": "'2025-01-01'"
                         }
                     },
                     "state_details": {
                         "state": "",
-                        "state_updated": "2025-02-13T11:21:09.762881+00:00"
+                        "state_updated": "2025-02-19T17:03:27.509493+00:00"
                     }
                 }
             ],
@@ -450,204 +418,192 @@
             "run_item_detail": [
                 {
                     "run_item_id": 13,
+                    "run_item_enabled": true,
                     "parameter_details": {
                         "parameter_name": "institute",
+                        "parameter_enabled": true,
                         "parameter_values": [
                             {
-                                "INSTITUTE_ID": 1,
-                                "KEY_VAULT_SECRET": "School1_ConnectionString"
+                                "value": 1,
+                                "metadata": {
+                                    "key_vault_secret": "School1_ConnectionString",
+                                    "placeholder_to_replace": "<<INSTITUTE_ID>>"
+                                }
                             }
                         ]
                     },
                     "dataset_details": {
                         "dataset_name": "TblPupilManagementPupils",
                         "dataset_enabled": true,
-                        "data_group": "Pupils",
                         "source_details": {
                             "source_schema": "dbo",
                             "source_table": "TblPupilManagementPupils",
-                            "source_query": "SELECT 1 AS [INSTITUTE_ID], [TblPupilManagementPupilsID],[txtSchoolID],[txtSubmitDateTime],[txtSubmitBy],[intPersonID],[txtSchoolCode],[txtOfficialName],[txtForename],[txtSurname],[txtMiddleNames],[txtInitials],[txtPreName],[txtPreferredSurname],[txtFullName],[txtGender],[txtDOB],[txtForm],[intNCYear],[txtYearBlock],[txtLevel],[txtTutor],[txtType],[txtAcademicHouse],[txtBoardingHouse],[txtEmailAddress],[txtEntryType],[txtEnrolmentDate],[intEnrolmentSchoolYear],[intEnrolmentNCYear],[txtEnrolmentHouse],[txtEnrolmentAcademicHouse],[txtEnrolmentTerm],[txtEnrolmentForm],[txtEnquiryDate],[txtEnquiryType],[txtEnquiryReason],[txtAdmissionsDate],[txtAdmissionsStatus],[txtReferenceRequestedDate],[txtInterviewDate],[txtInterviewTime],[txtWithdrawnDate],[txtWithdrawnReason],[txtRejectedDate],[txtRejectedReason],[txtRegisteredDate],[txtLeavingReason],[txtLeavingDate],[intLeavingNCYear],[intLeavingSchoolYear],[txtLeavingTerm],[txtProspectusEnquiryDate],[txtProspectusSentDate],[intProspectusSent],[txtVisitDate],[txtCandidateNumber],[txtCandidateCode],[txtCandidateForenames],[txtCandidateSurname],[intIsCandidate],[intFamily],[txtSiblingsIDList],[intSystemStatus] FROM [dbo].[TblPupilManagementPupils];"
-                        },
-                        "target_details": {
-                            "datalake_root1": "raw/TblPupilManagementPupils",
-                            "datalake_root2": "cleansed/TblPupilManagementPupils",
-                            "target_schema": "Staging",
-                            "target_table": "TblPupilManagementPupils"
+                            "source_query": "SELECT <<INSTITUTE_ID>> AS [INSTITUTE_ID], [TblPupilManagementPupilsID],[txtSchoolID],[txtSubmitDateTime],[txtSubmitBy],[intPersonID],[txtSchoolCode],[txtOfficialName],[txtForename],[txtSurname],[txtMiddleNames],[txtInitials],[txtPreName],[txtPreferredSurname],[txtFullName],[txtGender],[txtDOB],[txtForm],[intNCYear],[txtYearBlock],[txtLevel],[txtTutor],[txtType],[txtAcademicHouse],[txtBoardingHouse],[txtEmailAddress],[txtEntryType],[txtEnrolmentDate],[intEnrolmentSchoolYear],[intEnrolmentNCYear],[txtEnrolmentHouse],[txtEnrolmentAcademicHouse],[txtEnrolmentTerm],[txtEnrolmentForm],[txtEnquiryDate],[txtEnquiryType],[txtEnquiryReason],[txtAdmissionsDate],[txtAdmissionsStatus],[txtReferenceRequestedDate],[txtInterviewDate],[txtInterviewTime],[txtWithdrawnDate],[txtWithdrawnReason],[txtRejectedDate],[txtRejectedReason],[txtRegisteredDate],[txtLeavingReason],[txtLeavingDate],[intLeavingNCYear],[intLeavingSchoolYear],[txtLeavingTerm],[txtProspectusEnquiryDate],[txtProspectusSentDate],[intProspectusSent],[txtVisitDate],[txtCandidateNumber],[txtCandidateCode],[txtCandidateForenames],[txtCandidateSurname],[intIsCandidate],[intFamily],[txtSiblingsIDList],[intSystemStatus] FROM [dbo].[TblPupilManagementPupils];"
                         }
                     },
                     "state_details": {
                         "state": "",
-                        "state_updated": "2025-02-13T11:21:09.762881+00:00"
+                        "state_updated": "2025-02-19T17:03:27.509493+00:00"
                     }
                 },
                 {
                     "run_item_id": 14,
+                    "run_item_enabled": true,
                     "parameter_details": {
                         "parameter_name": "institute",
+                        "parameter_enabled": true,
                         "parameter_values": [
                             {
-                                "INSTITUTE_ID": 2,
-                                "KEY_VAULT_SECRET": "School2_ConnectionString"
+                                "value": 2,
+                                "metadata": {
+                                    "key_vault_secret": "School2_ConnectionString",
+                                    "placeholder_to_replace": "<<INSTITUTE_ID>>"
+                                }
                             }
                         ]
                     },
                     "dataset_details": {
                         "dataset_name": "TblPupilManagementPupils",
                         "dataset_enabled": true,
-                        "data_group": "Pupils",
                         "source_details": {
                             "source_schema": "dbo",
                             "source_table": "TblPupilManagementPupils",
-                            "source_query": "SELECT 2 AS [INSTITUTE_ID], [TblPupilManagementPupilsID],[txtSchoolID],[txtSubmitDateTime],[txtSubmitBy],[intPersonID],[txtSchoolCode],[txtOfficialName],[txtForename],[txtSurname],[txtMiddleNames],[txtInitials],[txtPreName],[txtPreferredSurname],[txtFullName],[txtGender],[txtDOB],[txtForm],[intNCYear],[txtYearBlock],[txtLevel],[txtTutor],[txtType],[txtAcademicHouse],[txtBoardingHouse],[txtEmailAddress],[txtEntryType],[txtEnrolmentDate],[intEnrolmentSchoolYear],[intEnrolmentNCYear],[txtEnrolmentHouse],[txtEnrolmentAcademicHouse],[txtEnrolmentTerm],[txtEnrolmentForm],[txtEnquiryDate],[txtEnquiryType],[txtEnquiryReason],[txtAdmissionsDate],[txtAdmissionsStatus],[txtReferenceRequestedDate],[txtInterviewDate],[txtInterviewTime],[txtWithdrawnDate],[txtWithdrawnReason],[txtRejectedDate],[txtRejectedReason],[txtRegisteredDate],[txtLeavingReason],[txtLeavingDate],[intLeavingNCYear],[intLeavingSchoolYear],[txtLeavingTerm],[txtProspectusEnquiryDate],[txtProspectusSentDate],[intProspectusSent],[txtVisitDate],[txtCandidateNumber],[txtCandidateCode],[txtCandidateForenames],[txtCandidateSurname],[intIsCandidate],[intFamily],[txtSiblingsIDList],[intSystemStatus] FROM [dbo].[TblPupilManagementPupils];"
-                        },
-                        "target_details": {
-                            "datalake_root1": "raw/TblPupilManagementPupils",
-                            "datalake_root2": "cleansed/TblPupilManagementPupils",
-                            "target_schema": "Staging",
-                            "target_table": "TblPupilManagementPupils"
+                            "source_query": "SELECT <<INSTITUTE_ID>> AS [INSTITUTE_ID], [TblPupilManagementPupilsID],[txtSchoolID],[txtSubmitDateTime],[txtSubmitBy],[intPersonID],[txtSchoolCode],[txtOfficialName],[txtForename],[txtSurname],[txtMiddleNames],[txtInitials],[txtPreName],[txtPreferredSurname],[txtFullName],[txtGender],[txtDOB],[txtForm],[intNCYear],[txtYearBlock],[txtLevel],[txtTutor],[txtType],[txtAcademicHouse],[txtBoardingHouse],[txtEmailAddress],[txtEntryType],[txtEnrolmentDate],[intEnrolmentSchoolYear],[intEnrolmentNCYear],[txtEnrolmentHouse],[txtEnrolmentAcademicHouse],[txtEnrolmentTerm],[txtEnrolmentForm],[txtEnquiryDate],[txtEnquiryType],[txtEnquiryReason],[txtAdmissionsDate],[txtAdmissionsStatus],[txtReferenceRequestedDate],[txtInterviewDate],[txtInterviewTime],[txtWithdrawnDate],[txtWithdrawnReason],[txtRejectedDate],[txtRejectedReason],[txtRegisteredDate],[txtLeavingReason],[txtLeavingDate],[intLeavingNCYear],[intLeavingSchoolYear],[txtLeavingTerm],[txtProspectusEnquiryDate],[txtProspectusSentDate],[intProspectusSent],[txtVisitDate],[txtCandidateNumber],[txtCandidateCode],[txtCandidateForenames],[txtCandidateSurname],[intIsCandidate],[intFamily],[txtSiblingsIDList],[intSystemStatus] FROM [dbo].[TblPupilManagementPupils];"
                         }
                     },
                     "state_details": {
                         "state": "",
-                        "state_updated": "2025-02-13T11:21:09.762881+00:00"
+                        "state_updated": "2025-02-19T17:03:27.509493+00:00"
                     }
                 },
                 {
                     "run_item_id": 15,
+                    "run_item_enabled": true,
                     "parameter_details": {
                         "parameter_name": "institute",
+                        "parameter_enabled": true,
                         "parameter_values": [
                             {
-                                "INSTITUTE_ID": 1,
-                                "KEY_VAULT_SECRET": "School1_ConnectionString"
+                                "value": 1,
+                                "metadata": {
+                                    "key_vault_secret": "School1_ConnectionString",
+                                    "placeholder_to_replace": "<<INSTITUTE_ID>>"
+                                }
                             }
                         ]
                     },
                     "dataset_details": {
                         "dataset_name": "TblReportsManagementCycle",
                         "dataset_enabled": true,
-                        "data_group": "Reports",
                         "source_details": {
                             "source_schema": "dbo",
                             "source_table": "TblReportsManagementCycle",
-                            "source_query": "SELECT 1 AS [INSTITUTE_ID], [TblReportsManagementCycleID],[intType],[txtReportName],[txtTrackingName],[txtShortName],[intPreviousCycle],[txtStartReports],[txtFinishReports],[txtPrintReports],[intReportYear],[intReportTerm],[intReportsProfile],[intPrintingProfile],[intActive],[blnPrimaryTeacherOnly],[intiSAMS],[intSP],[intPP],[blnDownload],[blnUpload],[txtSubmitBy],[txtSubmitDateTime] FROM [dbo].[TblReportsManagementCycle];"
-                        },
-                        "target_details": {
-                            "datalake_root1": "raw/TblReportsManagementCycle",
-                            "datalake_root2": "cleansed/TblReportsManagementCycle",
-                            "target_schema": "Staging",
-                            "target_table": "TblReportsManagementCycle"
+                            "source_query": "SELECT <<INSTITUTE_ID>> AS [INSTITUTE_ID], [TblReportsManagementCycleID],[intType],[txtReportName],[txtTrackingName],[txtShortName],[intPreviousCycle],[txtStartReports],[txtFinishReports],[txtPrintReports],[intReportYear],[intReportTerm],[intReportsProfile],[intPrintingProfile],[intActive],[blnPrimaryTeacherOnly],[intiSAMS],[intSP],[intPP],[blnDownload],[blnUpload],[txtSubmitBy],[txtSubmitDateTime] FROM [dbo].[TblReportsManagementCycle];"
                         }
                     },
                     "state_details": {
                         "state": "",
-                        "state_updated": "2025-02-13T11:21:09.762881+00:00"
+                        "state_updated": "2025-02-19T17:03:27.509493+00:00"
                     }
                 },
                 {
                     "run_item_id": 16,
+                    "run_item_enabled": true,
                     "parameter_details": {
                         "parameter_name": "institute",
+                        "parameter_enabled": true,
                         "parameter_values": [
                             {
-                                "INSTITUTE_ID": 2,
-                                "KEY_VAULT_SECRET": "School2_ConnectionString"
+                                "value": 2,
+                                "metadata": {
+                                    "key_vault_secret": "School2_ConnectionString",
+                                    "placeholder_to_replace": "<<INSTITUTE_ID>>"
+                                }
                             }
                         ]
                     },
                     "dataset_details": {
                         "dataset_name": "TblReportsManagementCycle",
                         "dataset_enabled": true,
-                        "data_group": "Reports",
                         "source_details": {
                             "source_schema": "dbo",
                             "source_table": "TblReportsManagementCycle",
-                            "source_query": "SELECT 2 AS [INSTITUTE_ID], [TblReportsManagementCycleID],[intType],[txtReportName],[txtTrackingName],[txtShortName],[intPreviousCycle],[txtStartReports],[txtFinishReports],[txtPrintReports],[intReportYear],[intReportTerm],[intReportsProfile],[intPrintingProfile],[intActive],[blnPrimaryTeacherOnly],[intiSAMS],[intSP],[intPP],[blnDownload],[blnUpload],[txtSubmitBy],[txtSubmitDateTime] FROM [dbo].[TblReportsManagementCycle];"
-                        },
-                        "target_details": {
-                            "datalake_root1": "raw/TblReportsManagementCycle",
-                            "datalake_root2": "cleansed/TblReportsManagementCycle",
-                            "target_schema": "Staging",
-                            "target_table": "TblReportsManagementCycle"
+                            "source_query": "SELECT <<INSTITUTE_ID>> AS [INSTITUTE_ID], [TblReportsManagementCycleID],[intType],[txtReportName],[txtTrackingName],[txtShortName],[intPreviousCycle],[txtStartReports],[txtFinishReports],[txtPrintReports],[intReportYear],[intReportTerm],[intReportsProfile],[intPrintingProfile],[intActive],[blnPrimaryTeacherOnly],[intiSAMS],[intSP],[intPP],[blnDownload],[blnUpload],[txtSubmitBy],[txtSubmitDateTime] FROM [dbo].[TblReportsManagementCycle];"
                         }
                     },
                     "state_details": {
                         "state": "",
-                        "state_updated": "2025-02-13T11:21:09.762881+00:00"
+                        "state_updated": "2025-02-19T17:03:27.509493+00:00"
                     }
                 },
                 {
                     "run_item_id": 17,
+                    "run_item_enabled": true,
                     "parameter_details": {
                         "parameter_name": "institute",
+                        "parameter_enabled": true,
                         "parameter_values": [
                             {
-                                "INSTITUTE_ID": 1,
-                                "KEY_VAULT_SECRET": "School1_ConnectionString"
+                                "value": 1,
+                                "metadata": {
+                                    "key_vault_secret": "School1_ConnectionString",
+                                    "placeholder_to_replace": "<<INSTITUTE_ID>>"
+                                }
                             }
                         ]
                     },
                     "dataset_details": {
                         "dataset_name": "TblReportsStore",
                         "dataset_enabled": true,
-                        "data_group": "Reports",
                         "source_details": {
                             "source_schema": "dbo",
                             "source_table": "TblReportsStore",
-                            "source_query": "SELECT 1 AS [INSTITUTE_ID], [TblReportsStoreID],[intReportCycle],[intReportType],[txtID],[intID],[txtSubID],[intTemplate],[intProgress],[txtSchoolID],[intYear],[intVersion],[txtSubmitDateTime],[txtSubmitBy] FROM [dbo].[TblReportsStore] WHERE [txtSubmitDateTime] >= '2020-01-01' AND [txtSubmitDateTime] < <<dtEnd>>;"
-                        },
-                        "target_details": {
-                            "datalake_root1": "raw/TblReportsStore",
-                            "datalake_root2": "cleansed/TblReportsStore",
-                            "target_schema": "Staging",
-                            "target_table": "TblReportsStore"
+                            "source_query": "SELECT <<INSTITUTE_ID>> AS [INSTITUTE_ID], [TblReportsStoreID],[intReportCycle],[intReportType],[txtID],[intID],[txtSubID],[intTemplate],[intProgress],[txtSchoolID],[intYear],[intVersion],[txtSubmitDateTime],[txtSubmitBy] FROM [dbo].[TblReportsStore] WHERE [txtSubmitDateTime] >= <<dtStart>> AND [txtSubmitDateTime] < <<dtEnd>>;"
                         },
                         "delta_details": {
                             "delta_enabled": true,
                             "dtStart": "'2020-01-01'",
-                            "dtEnd": ""
+                            "dtEnd": "'2025-01-01'"
                         }
                     },
                     "state_details": {
                         "state": "",
-                        "state_updated": "2025-02-13T11:21:09.762881+00:00"
+                        "state_updated": "2025-02-19T17:03:27.509493+00:00"
                     }
                 },
                 {
                     "run_item_id": 18,
+                    "run_item_enabled": true,
                     "parameter_details": {
                         "parameter_name": "institute",
+                        "parameter_enabled": true,
                         "parameter_values": [
                             {
-                                "INSTITUTE_ID": 2,
-                                "KEY_VAULT_SECRET": "School2_ConnectionString"
+                                "value": 2,
+                                "metadata": {
+                                    "key_vault_secret": "School2_ConnectionString",
+                                    "placeholder_to_replace": "<<INSTITUTE_ID>>"
+                                }
                             }
                         ]
                     },
                     "dataset_details": {
                         "dataset_name": "TblReportsStore",
                         "dataset_enabled": true,
-                        "data_group": "Reports",
                         "source_details": {
                             "source_schema": "dbo",
                             "source_table": "TblReportsStore",
-                            "source_query": "SELECT 2 AS [INSTITUTE_ID], [TblReportsStoreID],[intReportCycle],[intReportType],[txtID],[intID],[txtSubID],[intTemplate],[intProgress],[txtSchoolID],[intYear],[intVersion],[txtSubmitDateTime],[txtSubmitBy] FROM [dbo].[TblReportsStore] WHERE [txtSubmitDateTime] >= '2020-01-01' AND [txtSubmitDateTime] < <<dtEnd>>;"
-                        },
-                        "target_details": {
-                            "datalake_root1": "raw/TblReportsStore",
-                            "datalake_root2": "cleansed/TblReportsStore",
-                            "target_schema": "Staging",
-                            "target_table": "TblReportsStore"
+                            "source_query": "SELECT <<INSTITUTE_ID>> AS [INSTITUTE_ID], [TblReportsStoreID],[intReportCycle],[intReportType],[txtID],[intID],[txtSubID],[intTemplate],[intProgress],[txtSchoolID],[intYear],[intVersion],[txtSubmitDateTime],[txtSubmitBy] FROM [dbo].[TblReportsStore] WHERE [txtSubmitDateTime] >= <<dtStart>> AND [txtSubmitDateTime] < <<dtEnd>>;"
                         },
                         "delta_details": {
                             "delta_enabled": true,
                             "dtStart": "'2020-01-01'",
-                            "dtEnd": ""
+                            "dtEnd": "'2025-01-01'"
                         }
                     },
                     "state_details": {
                         "state": "",
-                        "state_updated": "2025-02-13T11:21:09.762881+00:00"
+                        "state_updated": "2025-02-19T17:03:27.509493+00:00"
                     }
                 }
             ],
@@ -667,34 +623,38 @@
             "run_item_detail": [
                 {
                     "run_item_id": 19,
+                    "run_item_enabled": true,
                     "parameter_details": {
                         "parameter_name": "LoadDimensionStoredProcedure",
                         "parameter_values": [
                             {
-                                "sp_name": "dim.sp1"
+                                "value": "dim.sp1",
+                                "metadata": {}
                             }
                         ]
                     },
                     "dataset_details": null,
                     "state_details": {
                         "state": "",
-                        "state_updated": "2025-02-13T11:21:09.762881+00:00"
+                        "state_updated": "2025-02-19T17:03:27.509493+00:00"
                     }
                 },
                 {
                     "run_item_id": 20,
+                    "run_item_enabled": true,
                     "parameter_details": {
                         "parameter_name": "LoadDimensionStoredProcedure",
                         "parameter_values": [
                             {
-                                "sp_name": "dim.sp2"
+                                "value": "dim.sp2",
+                                "metadata": {}
                             }
                         ]
                     },
                     "dataset_details": null,
                     "state_details": {
                         "state": "",
-                        "state_updated": "2025-02-13T11:21:09.762881+00:00"
+                        "state_updated": "2025-02-19T17:03:27.509493+00:00"
                     }
                 }
             ],
@@ -716,34 +676,38 @@
             "run_item_detail": [
                 {
                     "run_item_id": 21,
+                    "run_item_enabled": true,
                     "parameter_details": {
                         "parameter_name": "LoadFactStoredProcedure",
                         "parameter_values": [
                             {
-                                "sp_name": "fact.sp1"
+                                "value": "fact.sp1",
+                                "metadata": {}
                             }
                         ]
                     },
                     "dataset_details": null,
                     "state_details": {
                         "state": "",
-                        "state_updated": "2025-02-13T11:21:09.762881+00:00"
+                        "state_updated": "2025-02-19T17:03:27.509493+00:00"
                     }
                 },
                 {
                     "run_item_id": 22,
+                    "run_item_enabled": true,
                     "parameter_details": {
                         "parameter_name": "LoadFactStoredProcedure",
                         "parameter_values": [
                             {
-                                "sp_name": "fact.sp2"
+                                "value": "fact.sp2",
+                                "metadata": {}
                             }
                         ]
                     },
                     "dataset_details": null,
                     "state_details": {
                         "state": "",
-                        "state_updated": "2025-02-13T11:21:09.762881+00:00"
+                        "state_updated": "2025-02-19T17:03:27.509493+00:00"
                     }
                 }
             ],
@@ -765,34 +729,38 @@
             "run_item_detail": [
                 {
                     "run_item_id": 23,
+                    "run_item_enabled": true,
                     "parameter_details": {
                         "parameter_name": "LoadReportingStoredProcedure",
                         "parameter_values": [
                             {
-                                "sp_name": "reporting.sp1"
+                                "value": "reporting.sp1",
+                                "metadata": {}
                             }
                         ]
                     },
                     "dataset_details": null,
                     "state_details": {
                         "state": "",
-                        "state_updated": "2025-02-13T11:21:09.762881+00:00"
+                        "state_updated": "2025-02-19T17:03:27.509493+00:00"
                     }
                 },
                 {
                     "run_item_id": 24,
+                    "run_item_enabled": true,
                     "parameter_details": {
                         "parameter_name": "LoadReportingStoredProcedure",
                         "parameter_values": [
                             {
-                                "sp_name": "reporting.sp2"
+                                "value": "reporting.sp2",
+                                "metadata": {}
                             }
                         ]
                     },
                     "dataset_details": null,
                     "state_details": {
                         "state": "",
-                        "state_updated": "2025-02-13T11:21:09.762881+00:00"
+                        "state_updated": "2025-02-19T17:03:27.509493+00:00"
                     }
                 }
             ],
@@ -808,40 +776,97 @@
         },
         {
             "layer": 7,
-            "layer_name": "Data Warehouse - Maintenance",
+            "layer_name": "Data Warehouse - Deletions",
             "layer_enabled": true,
             "order": 7,
             "run_item_detail": [
                 {
                     "run_item_id": 25,
+                    "run_item_enabled": true,
                     "parameter_details": {
-                        "parameter_name": "LoadMaintenanceStoredProcedure",
+                        "parameter_name": "DeletionStoredProcedure",
                         "parameter_values": [
                             {
-                                "sp_name": "maintenance.sp1"
+                                "value": "deletion.sp1",
+                                "metadata": {}
                             }
                         ]
                     },
                     "dataset_details": null,
                     "state_details": {
                         "state": "",
-                        "state_updated": "2025-02-13T11:21:09.762881+00:00"
+                        "state_updated": "2025-02-19T17:03:27.509493+00:00"
                     }
                 },
                 {
                     "run_item_id": 26,
+                    "run_item_enabled": true,
                     "parameter_details": {
-                        "parameter_name": "LoadMaintenanceStoredProcedure",
+                        "parameter_name": "DeletionStoredProcedure",
                         "parameter_values": [
                             {
-                                "sp_name": "maintenance.sp2"
+                                "value": "deletion.sp2",
+                                "metadata": {}
                             }
                         ]
                     },
                     "dataset_details": null,
                     "state_details": {
                         "state": "",
-                        "state_updated": "2025-02-13T11:21:09.762881+00:00"
+                        "state_updated": "2025-02-19T17:03:27.509493+00:00"
+                    }
+                }
+            ],
+            "pipelines": [
+                {
+                    "pipeline_name": "Deletions",
+                    "enabled_parameters": [
+                        "DeletionStoredProcedure"
+                    ],
+                    "disabled_parameters": []
+                }
+            ]
+        },
+        {
+            "layer": 8,
+            "layer_name": "Data Warehouse - Maintenance",
+            "layer_enabled": true,
+            "order": 8,
+            "run_item_detail": [
+                {
+                    "run_item_id": 27,
+                    "run_item_enabled": true,
+                    "parameter_details": {
+                        "parameter_name": "LoadMaintenanceStoredProcedure",
+                        "parameter_values": [
+                            {
+                                "value": "maintenance.sp1",
+                                "metadata": {}
+                            }
+                        ]
+                    },
+                    "dataset_details": null,
+                    "state_details": {
+                        "state": "",
+                        "state_updated": "2025-02-19T17:03:27.509493+00:00"
+                    }
+                },
+                {
+                    "run_item_id": 28,
+                    "run_item_enabled": true,
+                    "parameter_details": {
+                        "parameter_name": "LoadMaintenanceStoredProcedure",
+                        "parameter_values": [
+                            {
+                                "value": "maintenance.sp2",
+                                "metadata": {}
+                            }
+                        ]
+                    },
+                    "dataset_details": null,
+                    "state_details": {
+                        "state": "",
+                        "state_updated": "2025-02-19T17:03:27.509493+00:00"
                     }
                 }
             ],

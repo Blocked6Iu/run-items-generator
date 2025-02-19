@@ -51,7 +51,7 @@
     "delta_details": {
       "delta_enabled": true,
       "dtStart": "'2020-01-01'",
-      "dtEnd": ""
+      "dtEnd": "'2025-01-01'"
     },
     "source_details": {
       "source_schema": "dbo",

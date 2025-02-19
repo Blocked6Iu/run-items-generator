@@ -2,46 +2,97 @@
   "parameters": [
     {
       "parameter_name": "institute",
+      "parameter_enabled": true,
       "parameter_values": [
-        { "INSTITUTE_ID": 1, "KEY_VAULT_SECRET": "School1_ConnectionString" },
-        { "INSTITUTE_ID": 2, "KEY_VAULT_SECRET": "School2_ConnectionString" }
+        {
+          "value": 1,
+          "metadata": {
+            "key_vault_secret": "School1_ConnectionString",
+            "placeholder_to_replace": "<<INSTITUTE_ID>>"
+          }
+        },
+        {
+          "value": 2,
+          "metadata": {
+            "key_vault_secret": "School2_ConnectionString",
+            "placeholder_to_replace": "<<INSTITUTE_ID>>"
+          }
+        }
       ],
       "layer_scope": [1, 2, 3]
     },
     {
       "parameter_name": "LoadDimensionStoredProcedure",
-      "parameter_values": [{ "sp_name": "dim.sp1" }, { "sp_name": "dim.sp2" }],
+      "parameter_enabled": true,
+      "parameter_values": [
+        {
+          "value": "dim.sp1",
+          "metadata": {}
+        },
+        {
+          "value": "dim.sp2",
+          "metadata": {}
+        }
+      ],
       "layer_scope": [4]
     },
     {
       "parameter_name": "LoadFactStoredProcedure",
+      "parameter_enabled": true,
       "parameter_values": [
-        { "sp_name": "fact.sp1" },
-        { "sp_name": "fact.sp2" }
+        {
+          "value": "fact.sp1",
+          "metadata": {}
+        },
+        {
+          "value": "fact.sp2",
+          "metadata": {}
+        }
       ],
       "layer_scope": [5]
     },
     {
       "parameter_name": "LoadReportingStoredProcedure",
+      "parameter_enabled": true,
       "parameter_values": [
-        { "sp_name": "reporting.sp1" },
-        { "sp_name": "reporting.sp2" }
+        {
+          "value": "reporting.sp1",
+          "metadata": {}
+        },
+        {
+          "value": "reporting.sp2",
+          "metadata": {}
+        }
       ],
       "layer_scope": [6]
     },
     {
       "parameter_name": "DeletionStoredProcedure",
+      "parameter_enabled": true,
       "parameter_values": [
-        { "sp_name": "deletion.sp1" },
-        { "sp_name": "deletion.sp2" }
+        {
+          "value": "deletion.sp1",
+          "metadata": {}
+        },
+        {
+          "value": "deletion.sp2",
+          "metadata": {}
+        }
       ],
       "layer_scope": [7]
     },
     {
       "parameter_name": "LoadMaintenanceStoredProcedure",
+      "parameter_enabled": true,
       "parameter_values": [
-        { "sp_name": "maintenance.sp1" },
-        { "sp_name": "maintenance.sp2" }
+        {
+          "value": "maintenance.sp1",
+          "metadata": {}
+        },
+        {
+          "value": "maintenance.sp2",
+          "metadata": {}
+        }
       ],
       "layer_scope": [8]
     }
