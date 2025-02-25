@@ -6,6 +6,7 @@
       "layer_enabled": true,
       "order": 1,
       "dataset_scope": true,
+      "sublayer_size": 30,
       "specific_datasets": [],
       "pipelines": [
         {
@@ -21,6 +22,7 @@
       "layer_enabled": true,
       "order": 2,
       "dataset_scope": true,
+      "sublayer_size": 30,
       "specific_datasets": [],
       "pipelines": [
         {
@@ -36,6 +38,7 @@
       "layer_enabled": true,
       "order": 3,
       "dataset_scope": true,
+      "sublayer_size": 30,
       "specific_datasets": [],
       "pipelines": [
         {
@@ -51,6 +54,7 @@
       "layer_enabled": true,
       "order": 4,
       "dataset_scope": false,
+      "sublayer_size": 30,
       "specific_datasets": [],
       "pipelines": [
         {
@@ -66,6 +70,7 @@
       "layer_enabled": true,
       "order": 5,
       "dataset_scope": false,
+      "sublayer_size": 30,
       "specific_datasets": [],
       "pipelines": [
         {
@@ -81,6 +86,7 @@
       "layer_enabled": true,
       "order": 6,
       "dataset_scope": false,
+      "sublayer_size": 30,
       "specific_datasets": [],
       "pipelines": [
         {
@@ -96,6 +102,7 @@
       "layer_enabled": true,
       "order": 7,
       "dataset_scope": false,
+      "sublayer_size": 30,
       "specific_datasets": [],
       "pipelines": [
         {
@@ -111,6 +118,7 @@
       "layer_enabled": true,
       "order": 8,
       "dataset_scope": false,
+      "sublayer_size": 30,
       "specific_datasets": [],
       "pipelines": [
         {

@@ -3,9 +3,6 @@ from datetime import datetime, timezone
 from itertools import product
 from math import ceil
 
-# Configurable sublayer size
-sublayer_size = 30  # Default maximum number of run items per sublayer
-
 
 # Load input JSON files
 def load_json(filename):
@@ -17,8 +14,10 @@ datasets = load_json("datasets.json")
 parameters = load_json("parameters.json")
 layers = load_json("layers.json")
 
-# Prepare output structure
-output = {"metadata": {"layers": []}, "layers": []}
+# Prepare metadata structure
+metadata_output = {
+    "metadata": {"generated_at": datetime.now(timezone.utc).isoformat(), "layers": []}
+}
 
 # Generate a sequential run_item_id
 run_item_id = 1
@@ -50,14 +49,6 @@ for layer in sorted(layers["layers"], key=lambda x: x["order"]):
                 delta_enabled = dataset.get("delta_details", {}).get(
                     "delta_enabled", False
                 )
-                if delta_enabled:
-                    dt_start = dataset["delta_details"].get("dtStart")
-                    dt_end = dataset["delta_details"].get("dtEnd")
-
-                    if dt_start:
-                        dt_start = f"'{dt_start.strip("'")}'"
-                    if dt_end:
-                        dt_end = f"'{dt_end.strip("'")}'"
 
                 run_item = {
                     "run_item_id": run_item_id,
@@ -120,44 +111,44 @@ for layer in sorted(layers["layers"], key=lambda x: x["order"]):
                     )
                     run_item_id += 1
 
-        # Determine sublayers
+        # Determine sublayers using per-layer sublayer size
+        sublayer_size = layer.get("sublayer_size", 30)  # Default to 30 if not provided
         num_sublayers = (
             ceil(len(run_item_detail) / sublayer_size) if run_item_detail else 1
         )
-        sublayers = [
-            {
-                "sublayer": i + 1,
-                "run_items": run_item_detail[
-                    i * sublayer_size : (i + 1) * sublayer_size
-                ],
-            }
-            for i in range(num_sublayers)
-        ]
+        sublayers = []
+
+        for i in range(num_sublayers):
+            sublayer_items = run_item_detail[
+                i * sublayer_size : (i + 1) * sublayer_size
+            ]
+            sublayer_number = i + 1
+            filename = f"run_items_{layer['layer']}_{sublayer_number}.json"
+
+            # Write sublayer file with timestamp
+            with open(filename, "w") as sublayer_file:
+                json.dump(
+                    {
+                        "generated_at": datetime.now(timezone.utc).isoformat(),
+                        "run_items": sublayer_items,
+                    },
+                    sublayer_file,
+                    indent=4,
+                )
+
+            sublayers.append(
+                {
+                    "sublayer": sublayer_number,
+                    "filename": filename,
+                    "run_items": [item["run_item_id"] for item in sublayer_items],
+                }
+            )
 
         # Store metadata about sublayers
-        output["metadata"]["layers"].append(
-            {
-                "layer": layer["layer"],
-                "sublayers": [
-                    {
-                        "sublayer": sub["sublayer"],
-                        "run_items": [item["run_item_id"] for item in sub["run_items"]],
-                    }
-                    for sub in sublayers
-                ],
-            }
+        metadata_output["metadata"]["layers"].append(
+            {"layer": layer["layer"], "sublayers": sublayers}
         )
 
-        layer_entry = {
-            "layer": layer["layer"],
-            "layer_name": layer["layer_name"],
-            "layer_enabled": layer["layer_enabled"],
-            "order": layer["order"],
-            "sublayers": sublayers,
-            "pipelines": layer["pipelines"],
-        }
-        output["layers"].append(layer_entry)
-
-# Save output JSON
-with open("run_items.json", "w") as outfile:
-    json.dump(output, outfile, indent=4)
+# Save metadata output JSON
+with open("run_items_metadata.json", "w") as metadata_file:
+    json.dump(metadata_output, metadata_file, indent=4)
