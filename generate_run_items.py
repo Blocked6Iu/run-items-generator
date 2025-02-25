@@ -1,4 +1,5 @@
 import json
+import os
 from datetime import datetime, timezone
 from itertools import product
 from math import ceil
@@ -13,6 +14,16 @@ def load_json(filename):
 datasets = load_json("datasets.json")
 parameters = load_json("parameters.json")
 layers = load_json("layers.json")
+
+# Create RunItems directory if it doesn't exist
+output_dir = "RunItems"
+os.makedirs(output_dir, exist_ok=True)
+
+# Clear existing files in RunItems directory
+for file in os.listdir(output_dir):
+    file_path = os.path.join(output_dir, file)
+    if os.path.isfile(file_path):
+        os.remove(file_path)
 
 # Prepare metadata structure
 metadata_output = {
@@ -123,7 +134,7 @@ for layer in sorted(layers["layers"], key=lambda x: x["order"]):
                 i * sublayer_size : (i + 1) * sublayer_size
             ]
             sublayer_number = i + 1
-            filename = f"run_items_{layer['layer']}_{sublayer_number}.json"
+            filename = f"{output_dir}/run_items_{layer['layer']}_{sublayer_number}.json"
 
             # Write sublayer file with timestamp
             with open(filename, "w") as sublayer_file:
@@ -150,5 +161,6 @@ for layer in sorted(layers["layers"], key=lambda x: x["order"]):
         )
 
 # Save metadata output JSON
-with open("run_items_metadata.json", "w") as metadata_file:
+metadata_filename = f"{output_dir}/run_items_metadata.json"
+with open(metadata_filename, "w") as metadata_file:
     json.dump(metadata_output, metadata_file, indent=4)
