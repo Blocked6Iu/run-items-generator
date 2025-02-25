@@ -1,6 +1,10 @@
 import json
 from datetime import datetime, timezone
 from itertools import product
+from math import ceil
+
+# Configurable sublayer size
+sublayer_size = 30  # Default maximum number of run items per sublayer
 
 
 # Load input JSON files
@@ -14,7 +18,7 @@ parameters = load_json("parameters.json")
 layers = load_json("layers.json")
 
 # Prepare output structure
-output = {"layers": []}
+output = {"metadata": {"layers": []}, "layers": []}
 
 # Generate a sequential run_item_id
 run_item_id = 1
@@ -41,12 +45,8 @@ for layer in sorted(layers["layers"], key=lambda x: x["order"]):
         if applicable_datasets:  # Dataset-scoped layers
             for dataset, param_value in product(
                 applicable_datasets,
-                next(
-                    (p["parameter_values"] for p in applicable_parameters),
-                    [],
-                ),
+                next((p["parameter_values"] for p in applicable_parameters), []),
             ):
-                # source_query = dataset["source_details"]["source_query"]
                 delta_enabled = dataset.get("delta_details", {}).get(
                     "delta_enabled", False
                 )
@@ -56,38 +56,28 @@ for layer in sorted(layers["layers"], key=lambda x: x["order"]):
 
                     if dt_start:
                         dt_start = f"'{dt_start.strip("'")}'"
-                        # source_query = source_query.replace("<<dtStart>>", dt_start)
                     if dt_end:
                         dt_end = f"'{dt_end.strip("'")}'"
-                        # source_query = source_query.replace("<<dtEnd>>", dt_end)
-
-                # Handle metadata dynamically
-                param_metadata = param_value.get("metadata", {})
 
                 run_item = {
                     "run_item_id": run_item_id,
-                    "run_item_enabled": True,
                     "parameter_details": {
-                        "parameter_name": "institute",
-                        "parameter_enabled": next(
+                        "parameter_name": next(
                             (
-                                p["parameter_enabled"]
+                                p["parameter_name"]
                                 for p in applicable_parameters
-                                if p["parameter_name"] == "institute"
+                                if param_value in p["parameter_values"]
                             ),
-                            False,
+                            "",
                         ),
-                        "parameter_values": [
-                            {"value": param_value["value"], "metadata": param_metadata}
-                        ],
+                        "parameter_values": [param_value],
                     },
                     "dataset_details": {
                         "dataset_name": dataset["dataset_name"],
                         "dataset_enabled": dataset["dataset_enabled"],
-                        "source_details": {
-                            **dataset["source_details"],
-                            # "source_query": source_query,
-                        },
+                        "data_group": dataset.get("data_group", None),
+                        "source_details": {**dataset["source_details"]},
+                        "target_details": dataset["target_details"],
                     },
                     "state_details": {
                         "state": "",
@@ -117,7 +107,6 @@ for layer in sorted(layers["layers"], key=lambda x: x["order"]):
                     run_item_detail.append(
                         {
                             "run_item_id": run_item_id,
-                            "run_item_enabled": True,
                             "parameter_details": {
                                 "parameter_name": param["parameter_name"],
                                 "parameter_values": [param_value],
@@ -131,12 +120,40 @@ for layer in sorted(layers["layers"], key=lambda x: x["order"]):
                     )
                     run_item_id += 1
 
+        # Determine sublayers
+        num_sublayers = (
+            ceil(len(run_item_detail) / sublayer_size) if run_item_detail else 1
+        )
+        sublayers = [
+            {
+                "sublayer": i + 1,
+                "run_items": run_item_detail[
+                    i * sublayer_size : (i + 1) * sublayer_size
+                ],
+            }
+            for i in range(num_sublayers)
+        ]
+
+        # Store metadata about sublayers
+        output["metadata"]["layers"].append(
+            {
+                "layer": layer["layer"],
+                "sublayers": [
+                    {
+                        "sublayer": sub["sublayer"],
+                        "run_items": [item["run_item_id"] for item in sub["run_items"]],
+                    }
+                    for sub in sublayers
+                ],
+            }
+        )
+
         layer_entry = {
             "layer": layer["layer"],
             "layer_name": layer["layer_name"],
             "layer_enabled": layer["layer_enabled"],
             "order": layer["order"],
-            "run_item_detail": run_item_detail,
+            "sublayers": sublayers,
             "pipelines": layer["pipelines"],
         }
         output["layers"].append(layer_entry)
