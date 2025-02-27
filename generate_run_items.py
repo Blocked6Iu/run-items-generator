@@ -63,6 +63,11 @@ for layer in sorted(layers["layers"], key=lambda x: x["order"]):
 
                 run_item = {
                     "run_item_id": run_item_id,
+                    "pipeline_name": (
+                        layer["pipelines"][0]["pipeline_name"]
+                        if layer["pipelines"]
+                        else None
+                    ),
                     "parameter_details": {
                         "parameter_name": next(
                             (
@@ -109,6 +114,11 @@ for layer in sorted(layers["layers"], key=lambda x: x["order"]):
                     run_item_detail.append(
                         {
                             "run_item_id": run_item_id,
+                            "pipeline_name": (
+                                layer["pipelines"][0]["pipeline_name"]
+                                if layer["pipelines"]
+                                else None
+                            ),
                             "parameter_details": {
                                 "parameter_name": param["parameter_name"],
                                 "parameter_values": [param_value],
