@@ -14,12 +14,14 @@ def load_json(filename):
 datasets = load_json("datasets.json")
 parameters = load_json("parameters.json")
 layers = load_json("layers.json")
+config = load_json("run_config.json")
 
 # Create RunItems directory if it doesn't exist
-output_dir = "RunItems"
+mode = config.get("mode", "")
+output_dir = mode
 os.makedirs(output_dir, exist_ok=True)
 
-# Clear existing files in RunItems directory
+# Clear existing files in output directory
 for file in os.listdir(output_dir):
     file_path = os.path.join(output_dir, file)
     if os.path.isfile(file_path):
