@@ -4,6 +4,9 @@ from datetime import datetime, timezone
 from itertools import product
 from math import ceil
 
+import filter_logic
+import filter_logic_validate
+
 
 # Load input JSON files
 def load_json(filename):
@@ -15,6 +18,10 @@ datasets = load_json("datasets.json")
 parameters = load_json("parameters.json")
 layers = load_json("layers.json")
 config = load_json("run_config.json")
+
+
+# validate the user values in run_config.json
+filter_logic_validate.validate_mode_settings(config)
 
 # Create RunItems directory if it doesn't exist
 mode = config.get("mode", "")
