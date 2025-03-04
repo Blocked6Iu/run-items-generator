@@ -183,3 +183,7 @@ for layer in sorted(layers["layers"], key=lambda x: x["order"]):
 metadata_filename = f"{output_dir}/run_items_metadata.json"
 with open(metadata_filename, "w") as metadata_file:
     json.dump(metadata_output, metadata_file, indent=4)
+
+
+# filter out any files from filtered directory based on run_config.json
+filter_logic.apply_filtering()

@@ -6,13 +6,13 @@
     "filtered_runitems_container": "run-items-config/filtered/run-items",
     "filtered_runitems_container_archive": "run-items-config/filtered/archive"
   },
-  "mode": "filtered",
+  "mode": "default",
   "mode_settings": {
     "rerun_from_failure": false,
     "rerun_from_completed": false,
     "rerun_failed_runitems_only": false,
 
-    "run_from_layer": 3,
+    "run_from_layer": 0,
     "run_layer_only": 0,
 
     "run_from_sublayer": 0,

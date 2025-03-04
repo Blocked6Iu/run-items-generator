@@ -38,7 +38,7 @@
       "layer_enabled": true,
       "order": 3,
       "dataset_scope": true,
-      "sublayer_size": 30,
+      "sublayer_size": 2,
       "specific_datasets": [],
       "pipelines": [
         {
